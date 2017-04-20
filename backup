@@ -41,14 +41,35 @@ class Route
     
     private $method = [];	
     
-    public function add($uri, $method)	
+    public function get($uri, $method)	
     {		
         $this->uri[] = $uri;
         
         $this->method[] = $method;	
     }	
     
-    public function submit()	
+    public function post($uri, $method)  
+    {       
+        $this->uri[] = $uri;
+        
+        $this->method[] = $method;  
+    }   
+    
+    public function put($uri, $method)  
+    {       
+        $this->uri[] = $uri;
+        
+        $this->method[] = $method;  
+    }   
+    
+    public function delete($uri, $method)  
+    {       
+        $this->uri[] = $uri;
+        
+        $this->method[] = $method;  
+    }
+    
+    public function execute()	
     {		
         $uri = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/';		
     
