@@ -1,39 +1,6 @@
 
 <?php
 
-class RestfulApi 
-{	
-
-    private $code = null;	
-    
-    public function render($data)	
-    {		
-        header('Content-Type: application/json');
-        
-        return json_encode(			
-            $this->code >= 200 && $this->code <= 299			
-                ? $this->success($data) 
-                : $this->error($data));	
-     }	
-     
-     private function success(array $data)	
-     {		
-        return ['code' => $this->code, 'data' => $data];	
-     }	
-     
-     private function error($message)	
-     {		
-        return ['error' => ['code' => $this->code, 'message' => $message]];	
-     }	
-     
-     public function setCode($code)	
-     {		
-        $this->code = $code;	
-     }
-     
-}
-
-
 class Route
 {	
 
@@ -91,6 +58,52 @@ class Route
 }
 
 
+class Connection
+{	
+    private static $pdo;
+    
+    public static function established()
+    {
+        return self::$pdo ?: self::$pdo = new PDO(
+            'mysql:host=localhost;dbname=specialdb;charset=utf8mb4',
+            'user',
+            'pass'
+        );
+    }
+}
+
+
+class RestfulApi 
+{   
+​
+    private $code = null;   
+    
+    public function render($data)   
+    {       
+        header('Content-Type: application/json');
+        
+        return json_encode(         
+            $this->code >= 200 && $this->code <= 299            
+                ? $this->success($data) 
+                : $this->error($data)); 
+     }  
+     
+     private function success(array $data)  
+     {      
+        return ['code' => $this->code, 'data' => $data];    
+     }  
+     
+     private function error($message)   
+     {      
+        return ['error' => ['code' => $this->code, 'message' => $message]]; 
+     }  
+     
+     public function setCode($code) 
+     {      
+        $this->code = $code;    
+     }
+     
+}
 
 
 
