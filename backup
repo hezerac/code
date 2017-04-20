@@ -12,8 +12,8 @@ class RestfulApi
         
         return json_encode(			
             $this->code >= 200 && $this->code <= 299			
-                ? $this->error($data) 
-                : $this->success($data));	
+                ? $this->success($data) 
+                : $this->error($data));	
      }	
      
      private function success(array $data)	
