@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 class RestfulApi 
@@ -33,4 +33,4 @@ class RestfulApi
      
 }
 ?>
-```
+
