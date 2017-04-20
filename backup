@@ -21,9 +21,9 @@ class RestfulApi
         return ['code' => $this->code, 'data' => $data];	
      }	
      
-     private function error($data)	
+     private function error($message)	
      {		
-        return ['error' => ['code' => $this->code, 'message' => $data]];	
+        return ['error' => ['code' => $this->code, 'message' => $message]];	
      }	
      
      public function setCode($code)	
