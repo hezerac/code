@@ -59,11 +59,64 @@ class Route
 
 //TODO:
 //Finish Route
-//Controller
-//Model
+//Cookie/login classes
+
+
+class Controller 
+{	
+    public function create()	
+    {		
+        $app = new Route();
+        $post = $app->response()->post();
+        
+        try {			
+            //$cookie = Cookie::bake();
+            
+            $model = new Path/ToThe/Model();
+            $data = $model->create($cookie, $post);
+            
+            $api = new Path/ToThe/RestApi();
+            $api->setCode(200);
+            $api->render($data);
+            
+        } catch (Exception $e) {
+        
+            $api = new Path/ToThe/RestfulApi();
+            $api->setCode($e->getCode());
+            $api->render($e->getMessage());		
+        }
+    }
+}
+
+
+class Model extends Database
+{
+
+    public function create($cookie, array $params)	
+    {		
+        $isStoredProcedure = true;		
+        $sql = 'stored_procedure_name';		
+        
+        if(!isset($params['required_value']) || empty($params['required_value'])) {			
+            throw new Exception(__METHOD__ . '::' . $e->getMessage(), $e->getCode());		
+        }		
+        
+        $p = [			
+            'cookie' => $cookie,			
+            'required' => $params['required_value'], 			
+            'optional' => isset($params['optional_value']) ? $params['optional_value'] : ''		
+        ];		
+        
+        $data = $db->call($sql, $p, $isStoredProcedure);		
+        return $data[0][0];	
+    }
+
+}
+
 
 class Connection
-{	
+{
+
     private static $pdo;
     
     public static function established()
@@ -74,6 +127,7 @@ class Connection
             'pass'
         );
     }
+
 }
 
 
@@ -115,7 +169,7 @@ class Database
 }
 
 
-class RestfulApi 
+class RestApi 
 {   
 
     private $code = null;   
