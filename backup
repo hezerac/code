@@ -163,7 +163,7 @@ class Database
 
     private function bindAll($stmt, $params) 
     {		
-        for($i = 1; $i < count($params); $i++) {			
+        for($i = 1; $i <= count($params); $i++) {			
             $stmt->bindParam($i, $value);		
         }
     }
