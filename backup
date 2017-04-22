@@ -34,7 +34,7 @@ class Route
         $this->uri[] = $uri;
         
         $this->method[] = $method;  
-    }
+    } 
     
     public function execute()	
     {		
