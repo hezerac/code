@@ -63,13 +63,14 @@ class Route
 
 
 class Controller 
-{	
-    public function create()	
-    {		
-        $app = new Route();
-        $post = $app->response()->post();
-        
-        try {			
+{
+
+    public function create()
+    {  
+        try {
+            $app = new Route();
+            $post = $app->response()->post();
+            
             //$cookie = Cookie::bake();
             
             $model = new Path/ToThe/Model();
@@ -83,9 +84,10 @@ class Controller
         
             $api = new Path/ToThe/RestfulApi();
             $api->setCode($e->getCode());
-            $api->render($e->getMessage());		
+            $api->render($e->getMessage());
         }
     }
+
 }
 
 
