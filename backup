@@ -163,9 +163,9 @@ class Database
 
     private function bindAll($stmt, $params) 
     {		
-        foreach($params as $key => $value) {			
-            $stmt->bindParam(':$key', $value);		
-        }	
+        for($i = 1; $i < count($params); $i++) {			
+            $stmt->bindParam($i, $value);		
+        }
     }
 
 }
