@@ -82,7 +82,7 @@ class Controller
             
         } catch (Exception $e) {
         
-            $api = new Path/ToThe/RestfulApi();
+            $api = new Path/ToThe/RestApi();
             $api->setCode($e->getCode());
             $api->render($e->getMessage());
         }
@@ -157,14 +157,14 @@ class Database
     }	
 
     private function placeholder($params)	
-    {		
-        return implode(',', str_replace($params, '?', $params));	
+    {
+        return ':' . implode(', :', array_keys($params));	
     }	
 
     private function bindAll($stmt, $params) 
     {		
-        for($i = 1; $i <= count($params); $i++) {			
-            $stmt->bindParam($i, $value);		
+        foreach($params as $key => $value) {			
+            $stmt->bindParam(':$key', $value);		
         }
     }
 
