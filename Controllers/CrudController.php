@@ -4,8 +4,9 @@
  */
  namespace Controllers;
  
- class CrudController
- {
+class CrudController
+{
+  
     public function get()
     {
         try {
@@ -18,18 +19,17 @@
             $model = new /Models/CrudModel();
             $data = $model->create($cookie, $get);
             
-            $api = new Path/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode(200);
             $api->render($data);
         
         } catch (Exception $e) {
             
-            $api = new Path/ToThe/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode($e->getCode());
             $api->render($e->getMessage());
         }
     }
- 
  
     public function create()
     {
@@ -43,18 +43,17 @@
             $model = new /Models/CrudModel();
             $data = $model->create($cookie, $post);
             
-            $api = new Path/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode(200);
             $api->render($data);
         
         } catch (Exception $e) {
             
-            $api = new Path/ToThe/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode($e->getCode());
             $api->render($e->getMessage());
         }
     }
- 
  
     public function update($id)
     {
@@ -68,19 +67,18 @@
             $model = new /Models/CrudModel();
             $data = $model->create($cookie, $put, $id);
             
-            $api = new Path/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode(200);
             $api->render($data);
         
         } catch (Exception $e) {
             
-            $api = new Path/ToThe/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode($e->getCode());
             $api->render($e->getMessage());
         }
     }
  
-  
     public function delete($id)
     {
         try {
@@ -90,13 +88,13 @@
             $model = new /Models/CrudModel();
             $data = $model->delete($cookie, $id);
             
-            $api = new Path/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode(200);
             $api->render($data);
         
         } catch (Exception $e) {
             
-            $api = new Path/ToThe/RestApi();
+            $api = new /Utilities/RestApi();
             $api->setCode($e->getCode());
             $api->render($e->getMessage());
         }
