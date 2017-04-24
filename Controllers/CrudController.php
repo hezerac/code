@@ -2,7 +2,7 @@
 /**
  * Crud Controller
  */
- namespace Controllers;
+namespace Controllers;
  
 class CrudController
 {
