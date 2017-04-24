@@ -16,7 +16,8 @@ class RestApi
         return json_encode(         
             $this->code >= 200 && $this->code <= 299            
                 ? $this->success($data) 
-                : $this->error($data)); 
+                : $this->error($data)
+        ); 
     }  
 
     private function success(array $data)  
