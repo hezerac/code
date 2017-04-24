@@ -11,36 +11,12 @@
         try {
             
             $app = new Route();
-            $post = $app->response()->post();
+            $get = $app->response()->get();
+         
             //$cookie = Cookie::bake();
             
             $model = new /Models/CrudModel();
-            $data = $model->create($cookie, $post);
-            
-            $api = new Path/RestApi();
-            $api->setCode(200);
-            $api->render($data);
-        
-        } catch (Exception $e) {
-            
-            $api = new Path/ToThe/RestApi();
-            $api->setCode($e->getCode());
-            $api->render($e->getMessage());
-        }
-    }
- 
- }
- 
-    public function create()
-    {
-        try {
-            
-            $app = new Route();
-            $post = $app->response()->post();
-            //$cookie = Cookie::bake();
-            
-            $model = new /Models/CrudModel();
-            $data = $model->create($cookie, $post);
+            $data = $model->create($cookie, $get);
             
             $api = new Path/RestApi();
             $api->setCode(200);
@@ -61,6 +37,7 @@
             
             $app = new Route();
             $post = $app->response()->post();
+         
             //$cookie = Cookie::bake();
             
             $model = new /Models/CrudModel();
@@ -78,7 +55,52 @@
         }
     }
  
-
-
  
+    public function update($id)
+    {
+        try {
+            
+            $app = new Route();
+            $put = $app->response()->put();
+         
+            //$cookie = Cookie::bake();
+            
+            $model = new /Models/CrudModel();
+            $data = $model->create($cookie, $put, $id);
+            
+            $api = new Path/RestApi();
+            $api->setCode(200);
+            $api->render($data);
+        
+        } catch (Exception $e) {
+            
+            $api = new Path/ToThe/RestApi();
+            $api->setCode($e->getCode());
+            $api->render($e->getMessage());
+        }
+    }
+ 
+  
+    public function delete($id)
+    {
+        try {
+         
+            //$cookie = Cookie::bake();
+            
+            $model = new /Models/CrudModel();
+            $data = $model->delete($cookie, $id);
+            
+            $api = new Path/RestApi();
+            $api->setCode(200);
+            $api->render($data);
+        
+        } catch (Exception $e) {
+            
+            $api = new Path/ToThe/RestApi();
+            $api->setCode($e->getCode());
+            $api->render($e->getMessage());
+        }
+    }
+
+}
 ?>
