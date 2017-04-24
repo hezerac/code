@@ -3,7 +3,7 @@
  * Crud Route
  */
  
- class CrudRoute
+ class CrudRoute extends Router
  {}
  
 ?>
