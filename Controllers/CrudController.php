@@ -11,10 +11,10 @@ class CrudController
     {
         try {
             
-            $app = new Route();
+            $app = new Request();
             $get = $app->response()->get();
          
-            //$cookie = Cookie::bake();
+            //$cookie = Cookie::bake;
             
             $model = new /Models/CrudModel();
             $data = $model->create($cookie, $get);
@@ -35,7 +35,7 @@ class CrudController
     {
         try {
             
-            $app = new Route();
+            $app = new Request();
             $post = $app->response()->post();
          
             //$cookie = Cookie::bake();
@@ -59,7 +59,7 @@ class CrudController
     {
         try {
             
-            $app = new Route();
+            $app = new Request();
             $put = $app->response()->put();
          
             //$cookie = Cookie::bake();
