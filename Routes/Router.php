@@ -66,12 +66,16 @@ class Router
         $parts = explode(':', $value);
         
         if(count($parts) === 1) {
+            
             return '$' . $parts[1];
+            
         }
         
         // for getting multiple args
         $args = array_filter($parts, function($val) {
+            
             if(!($val % 2)) return $val;
+            
         }, ARRAY_FILTER_USE_KEY);
         
         return '$' . implode(', $', $args);
