@@ -68,7 +68,6 @@ class Router
         if(count($parts) === 1) {
             
             return '$' . $parts[1];
-            
         }
         
         // for getting multiple args
