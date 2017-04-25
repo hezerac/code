@@ -11,7 +11,7 @@ class Router
     
     private $method = [];
     
-    public function execute()   
+    public function run()   
     {       
         $uri = htmlspecialchars($_GET['uri']);
         
