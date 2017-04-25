@@ -27,7 +27,7 @@ class Router
 
             $method = $parts[1];
             
-            $args = (substr_count($value, ':') > 2)
+            $args = (substr_count($value, ':') > 1)
                 ? $this->getArgs($value) 
                 : $this->getArg($value);
 
