@@ -32,12 +32,7 @@ class Router
         $this->add($uri, $method))
     }
     
-    private function add($uri, $method))
-    {
-        $this->uri[] = $uri;
-        
-        $this->method[] = $method;  
-    }
+
     
 
     public function execute()	
@@ -64,24 +59,38 @@ class Router
         }	
     }
     
+    private function add($uri, $method))
+    {
+        $this->uri[] = $uri;
+        
+        $this->method[] = $method;  
+    }
+    
     private function getArg($value)
     {
         if(!strpos($value, ':')) return null;
             
-        return '$' . implode(':', $value)[1]; 
+        return htmlentities(
+            $_GET[implode(':', $value)[1]], 
+            ENT_QUOTES, 
+            'UTF-8'
+        );
     }
     
     private function getArgs($value)
     {
-        $parts = explode(':', $value);
+        $parts = explode(':', $value); //FIX: must remove trailing slashes too
         
-        $args = array_filter($parts, function($val) {
-            
-            if(!($val % 2)) return $val;
-            
-        }, ARRAY_FILTER_USE_KEY);
+        $args = array_filter($parts, function($val, $key) 
+        {
+            if(!($key % 2)) return htmlentities(
+                $_GET[$val], 
+                ENT_QUOTES, 
+                'UTF-8'
+            );
+        }, ARRAY_FILTER_USE_BOTH);
         
-        return '$' . implode(', $', $args);
+        return implode(', ', $args);
     }
 
 }
