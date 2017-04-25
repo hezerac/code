@@ -41,15 +41,13 @@ class Router
 
     public function execute()	
     {		
-        $destination = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/';
-        
-
+        $destination = isset($_GET['uri']) ? '/' . $_GET['uri'] : '/'; // fix this business
 
         foreach($this->uri as $key => $value) {
-
-            $this->errorCheck($destination, $value); //WRONG! there will always be errors but for one. change this.
             
-            $args = $this->getArgs($key);
+            if(!strstr($destination, $value)) continue;
+            
+            $args = $this->getArgs($value);
             
             $parts = explode(':', $this->method[$key]);
 
@@ -61,28 +59,22 @@ class Router
         }	
     }
     
-    public function getArgs($key)
+    public function getArgs($value)
     {   
-        if(!strpos($this->uri[$key], ':')) return null;
+        if(!strpos($value, ':')) return null;
         
-        $args = explode(':', $this->uri[$key]);
+        $parts = explode(':', $value);
         
-        $results = [];
-        
-        foreach($args as $arg) {
-            if($arg % 1 !== 0) {
-                $results[] = $arg;
-            }
+        if(count($parts) === 1) {
+            return '$' . $parts[0];
         }
-            
-        return $results ? extract(array_combine($results, $results)) : null;
-    }
-    
-    private function errorCheck($destination, $value)
-    {
-        if(!strstr($destination, $value)) {
-            throw Exception(__METHOD__ . '::' . $e->getMessage(), $e->getCode());
-        }
+        
+        // params are in $parts[even]
+        $args = array_filter($parts, function($val) {
+            if(!($val % 2)) return $val;
+        }, ARRAY_FILTER_USE_KEY);
+        
+        return '$' . implode(', $', $args);
     }
 
 }
