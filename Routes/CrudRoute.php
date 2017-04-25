@@ -4,16 +4,20 @@
  *
  */
  
-$route = /Path/Route();
+$app = /Router;
 
 
-$route->get('/','/Controllers/CrudController:get');
+$app->get('/','/Controllers/CrudController:get');
 
-$route->post('/','/Controllers/CrudController:create');
+$app->get('/:id','/Controllers/CrudController:getOne');
 
-$route->put('/id','/Controllers/CrudController:update');
+$app->post('/','/Controllers/CrudController:create');
 
-$route->delete('/id','/Controllers/CrudController:delete');
+$app->put('/:id','/Controllers/CrudController:update');
 
+$app->delete('/:id','/Controllers/CrudController:delete');
+
+$app->run();
  
+
 ?>
