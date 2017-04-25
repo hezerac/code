@@ -68,7 +68,7 @@ class Router
         if(!strpos($value, ':')) return null;
             
         return htmlentities(
-            $_GET[implode(':', $value)[1]], 
+            $_GET[explode(':', $value)[1]], 
             ENT_QUOTES, 
             'UTF-8'
         );
