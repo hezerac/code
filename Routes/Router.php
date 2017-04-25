@@ -10,6 +10,30 @@ class Router
     private $uri = [];
     
     private $method = [];
+    
+    public function execute()   
+    {       
+        $uri = htmlspecialchars($_GET['uri']);
+        
+        $destination = isset($uri) ? '/' . $uri : '/'; //TODO: fix this business
+
+        foreach($this->uri as $key => $value) {
+            
+            if(!strstr($destination, $value)) continue;
+            
+            $parts = explode(':', $this->method[$key]);
+
+            $controller = new $parts[0]();
+
+            $method = $parts[1];
+            
+            $args = (substr_count($value, ':') > 2)
+                ? $this->getArgs($value) 
+                : $this->getArg($value);
+
+            $controller->$method($args);
+        }   
+    }
 
     public function get($uri, $method)
     {		
@@ -32,33 +56,6 @@ class Router
         $this->add($uri, $method))
     }
     
-
-    
-
-    public function execute()	
-    {		
-        $uri = htmlspecialchars($_GET['uri']);
-        
-        $destination = isset($uri) ? '/' . $uri : '/'; // fix this business
-
-        foreach($this->uri as $key => $value) {
-            
-            if(!strstr($destination, $value)) continue;
-            
-            $parts = explode(':', $this->method[$key]);
-
-            $controller = new $parts[0]();
-
-            $method = $parts[1];
-            
-            $args = (substr_count($value, ':') > 2) // get $_GET[] params
-                ? $this->getArgs($value) 
-                : $this->getArg($value);
-
-            $controller->$method($args);
-        }	
-    }
-    
     private function add($uri, $method))
     {
         $this->uri[] = $uri;
@@ -79,7 +76,7 @@ class Router
     
     private function getArgs($value)
     {
-        $parts = explode(':', $value); //FIX: must remove trailing slashes too
+        $parts = explode(':', $value); //TODO: must remove trailing slashes too
         
         $args = array_filter($parts, function($val, $key) 
         {
