@@ -7,41 +7,28 @@ namespace Models;
 class CrudModel extends Model
 {
 
-    public function getAll($cookie, array $params)  
+    public function getAll($cookie)  
     {       
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_get_all';
 
-        if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
-        }
-
-        $p = [
-            'cookie' => $cookie,
-            'required' => $params['required_value'],
-            'optional' => isset($params['optional_value']) ? $params['optional_value'] : ''
-        ];
+        $p = [ 'cookie' => $cookie ];
 
         $data = $db->call($sql, $p, $isStoredProcedure);
 
         return $data[0];
     }
     
-    public function getOne($cookie, array $params)  
+    public function getOne($cookie, $id)  
     {       
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_get_one';
 
-        if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
-        }
-
         $p = [
             'cookie' => $cookie,
-            'required' => $params['required_value'],
-            'optional' => isset($params['optional_value']) ? $params['optional_value'] : ''
+            'id' => $id
         ];
 
         $data = $db->call($sql, $p, $isStoredProcedure);
@@ -70,7 +57,7 @@ class CrudModel extends Model
         return $data[0][0];
     }
 
-    public function update($cookie, array $params)  
+    public function update($cookie, array $params, $id)  
     {       
         $isStoredProcedure = true;
 
@@ -83,7 +70,8 @@ class CrudModel extends Model
         $p = [
             'cookie' => $cookie,
             'required' => $params['required_value'],
-            'optional' => isset($params['optional_value']) ? $params['optional_value'] : ''
+            'optional' => isset($params['optional_value']) ? $params['optional_value'] : '',
+            'id' => $id
         ];
 
         $data = $db->call($sql, $p, $isStoredProcedure);
@@ -91,20 +79,15 @@ class CrudModel extends Model
         return $data[0][0];
     }
     
-    public function delete($cookie, array $params)  
+    public function delete($cookie, $id)  
     {       
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_delete';
 
-        if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
-        }
-
         $p = [
             'cookie' => $cookie,
-            'required' => $params['required_value'],
-            'optional' => isset($params['optional_value']) ? $params['optional_value'] : ''
+            'id' => $id
         ];
 
         $db->call($sql, $p, $isStoredProcedure);
