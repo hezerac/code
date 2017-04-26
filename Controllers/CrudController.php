@@ -17,15 +17,15 @@ class CrudController
 
             //$cookie = (new Cookie)->bake();
 
-            $get = (new Request)->get();
+            $request = (new Request)->get();
 
-            $data = (new CrudModel)->getAll($cookie, $get);
+            $data = (new CrudModel)->getAll($cookie, $request);
 
-            $response = (new RestApi)->setCode(200)->render($data);
+            $response = (new RestApi)->setCode(200)->response($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->render($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
         }
     }
 
@@ -35,15 +35,15 @@ class CrudController
 
             //$cookie = (new Cookie)->bake();
 
-            $get = (new Request)->get();
+            $request = (new Request)->get();
 
-            $data = (new CrudModel)->getOne($cookie, $get, $id);
+            $data = (new CrudModel)->getOne($cookie, $request, $id);
 
-            $response = (new RestApi)->setCode(200)->render($data);
+            $response = (new RestApi)->setCode(200)->response($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->render($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
         }
     }
 
@@ -53,15 +53,15 @@ class CrudController
 
             //$cookie = (new Cookie)->bake();
 
-            $post = (new Request)->post();
+            $request = (new Request)->post();
 
-            $data = (new CrudModel)->create($cookie, $post);
+            $data = (new CrudModel)->create($cookie, $request);
 
-            $response = (new RestApi)->setCode(200)->render($data);
+            $response = (new RestApi)->setCode(200)->response($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->render($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
         }
     }
 
@@ -71,15 +71,15 @@ class CrudController
 
             //$cookie = (new Cookie)->bake();
 
-            $put = (new Request)->put();
+            $request = (new Request)->put();
 
-            $data = (new CrudModel)->update($cookie, $put, $id);
+            $data = (new CrudModel)->update($cookie, $request, $id);
 
-            $response = (new RestApi)->setCode(200)->render($data);
+            $response = (new RestApi)->setCode(200)->response($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->render($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
         }
     }
 
@@ -89,15 +89,15 @@ class CrudController
 
             //$cookie = (new Cookie)->bake();
 
-            $delete = (new Request)->delete();
+            $request = (new Request)->delete();
 
-            $data = (new CrudModel)->delete($cookie, $delete, $id);
+            $data = (new CrudModel)->delete($cookie, $request, $id);
 
-            $response = (new RestApi)->setCode(200)->render($data);
+            $response = (new RestApi)->setCode(200)->response($data);
 
         } catch (Exception $e) {
             
-            $response = (new RestApi)->setCode($e->getCode())->render($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
         }
     }
 
