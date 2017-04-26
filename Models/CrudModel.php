@@ -14,7 +14,7 @@ class CrudModel extends Model
         $sql = 'stored_procedure_name_get_all';
 
         if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new Exception(__METHOD__ . '::' . 'Missing require value.', 400);
+            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
         }
 
         $p = [
@@ -35,7 +35,7 @@ class CrudModel extends Model
         $sql = 'stored_procedure_name_get_one';
 
         if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new Exception(__METHOD__ . '::' . 'Missing require value.', 400);
+            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
         }
 
         $p = [
@@ -56,7 +56,7 @@ class CrudModel extends Model
         $sql = 'stored_procedure_name_create';
 
         if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new Exception(__METHOD__ . '::' . 'Missing require value.', 400);
+            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
         }
 
         $p = [
@@ -77,7 +77,7 @@ class CrudModel extends Model
         $sql = 'stored_procedure_name_update';
 
         if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new Exception(__METHOD__ . '::' . 'Missing require value.', 400);
+            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
         }
 
         $p = [
@@ -98,7 +98,7 @@ class CrudModel extends Model
         $sql = 'stored_procedure_name_delete';
 
         if(!isset($params['required_value']) || empty($params['required_value'])) {
-            throw new Exception(__METHOD__ . '::' . 'Missing require value.', 400);
+            throw new \Exception(__METHOD__ . '::' . 'Missing require value.', 400);
         }
 
         $p = [
