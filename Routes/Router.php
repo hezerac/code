@@ -55,6 +55,11 @@ class Router
     {       
         $this->add($uri, $method))
     }
+
+    public function name($name) //TODO: name method
+    {
+        
+    }
     
     private function add($uri, $method))
     {
@@ -62,12 +67,7 @@ class Router
         
         $this->method[] = $method;  
     }
-    
-    public function name($name) 
-    {
-        //TODO: name method
-    }
-    
+
     private function getArg($value)
     {
         if(!strpos($value, ':')) return null;
