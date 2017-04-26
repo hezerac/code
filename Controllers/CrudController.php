@@ -5,7 +5,7 @@
 namespace Controllers;
 
 use \Models\CrudModel;
-use \HTTP\Request //TODO: Make/add Request class
+use \HTTP\Request; //TODO: Make/add Request class
 use \HTTP\Response;
 
 class CrudController
