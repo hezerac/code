@@ -1,3 +1,4 @@
+<?php
 /**
  * Database
  *
@@ -40,3 +41,5 @@ class Database
     }
 
 }
+
+?>
