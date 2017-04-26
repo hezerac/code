@@ -63,6 +63,11 @@ class Router
         $this->method[] = $method;  
     }
     
+    public function name($name) 
+    {
+        //TODO: name method
+    }
+    
     private function getArg($value)
     {
         if(!strpos($value, ':')) return null;
