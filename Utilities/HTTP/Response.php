@@ -1,6 +1,6 @@
 <?php
 /**
- * REST API
+ * HTTP Response
  *
  */
 namespace Utilities\HTTP;
