@@ -5,8 +5,8 @@
 namespace Controllers;
 
 use \Models\CrudModel;
-use \Utilities\RestApi;
-use \Dir\Request //TODO: Make/add Request dir
+use \HTTP\Request //TODO: Make/add Request class
+use \HTTP\Response;
 
 class CrudController
 {
