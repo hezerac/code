@@ -1,12 +1,13 @@
 <?php
 /**
  * Crud Controller
+ *
  */
 namespace Controllers;
 
 use \Models\CrudModel;
-use \HTTP\Request; //TODO: Make/add Request class
-use \HTTP\Response;
+use Utilities\HTTP\Request;
+use Utilities\HTTP\Response;
 
 class CrudController
 {
