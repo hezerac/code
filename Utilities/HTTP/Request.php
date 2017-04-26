@@ -1,8 +1,8 @@
 <?php   
 /**
-* HTTP Request
-*
-*/
+ * HTTP Request
+ *
+ */
 namespace Utilities\HTTP;
 
 class Request  
