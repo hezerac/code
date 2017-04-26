@@ -15,7 +15,7 @@ class CrudModel extends Model
 
         $params = [ 'user' => $user ];
 
-        $data = $db->call($sql, $params, $isStoredProcedure);
+        $data = parent::call($sql, $params, $isStoredProcedure);
 
         return $data[0];
     }
@@ -31,7 +31,7 @@ class CrudModel extends Model
             'id' => $id
         ];
 
-        $data = $db->call($sql, $params, $isStoredProcedure);
+        $data = parent::call($sql, $params, $isStoredProcedure);
 
         return $data[0][0];
     }
@@ -52,7 +52,7 @@ class CrudModel extends Model
             'optional' => isset($request['optional_value']) ? $request['optional_value'] : ''
         ];
 
-        $data = $db->call($sql, $params, $isStoredProcedure);
+        $data = parent::call($sql, $params, $isStoredProcedure);
 
         return $data[0][0];
     }
@@ -74,7 +74,7 @@ class CrudModel extends Model
             'id' => $id
         ];
 
-        $data = $db->call($sql, $params, $isStoredProcedure);
+        $data = parent::call($sql, $params, $isStoredProcedure);
 
         return $data[0][0];
     }
@@ -90,7 +90,7 @@ class CrudModel extends Model
             'id' => $id
         ];
 
-        $db->call($sql, $params, $isStoredProcedure);
+        parent::call($sql, $params, $isStoredProcedure);
     }
     
 }
