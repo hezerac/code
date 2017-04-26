@@ -10,17 +10,17 @@ class Request
 
     public function get()
     {
-        return [];
+        //return get_headers($url);
     }
     
     public function post()
     {
-        return [];
+        return $_POST;
     }
     
     public function put()
     {
-        return [];
+        return $_POST;
     }
     
     public function delete()
