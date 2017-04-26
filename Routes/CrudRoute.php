@@ -7,7 +7,7 @@
 $app = /Router;
 
 
-$app->get('/','/Controllers/CrudController:get');
+$app->get('/','/Controllers/CrudController:getAll');
 
 $app->get('/:id','/Controllers/CrudController:getOne');
 
@@ -18,6 +18,6 @@ $app->put('/:id','/Controllers/CrudController:update');
 $app->delete('/:id','/Controllers/CrudController:delete');
 
 $app->run();
- 
+
 
 ?>
