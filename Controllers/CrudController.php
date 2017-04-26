@@ -6,8 +6,7 @@
 namespace Controllers;
 
 use \Models\CrudModel;
-use Utilities\HTTP\Request;
-use Utilities\HTTP\Response;
+use Utilities\HTTP\{Request, Response};
 
 class CrudController
 {
