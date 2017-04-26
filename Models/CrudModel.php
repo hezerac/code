@@ -7,27 +7,27 @@ namespace Models;
 class CrudModel extends Model
 {
 
-    public function getAll($cookie, array $request)  
+    public function getAll($user, array $request)  
     {       
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_get_all';
 
-        $params = [ 'cookie' => $cookie ];
+        $params = [ 'user' => $user ];
 
         $data = $db->call($sql, $params, $isStoredProcedure);
 
         return $data[0];
     }
     
-    public function getOne($cookie, array $request, $id)  
+    public function getOne($user, array $request, $id)  
     {       
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_get_one';
 
         $params = [
-            'cookie' => $cookie,
+            'user' => $user,
             'id' => $id
         ];
 
@@ -36,7 +36,7 @@ class CrudModel extends Model
         return $data[0][0];
     }
     
-    public function create($cookie, array $request)	
+    public function create($user, array $request)	
     {		
         $isStoredProcedure = true;
 
@@ -47,7 +47,7 @@ class CrudModel extends Model
         }
 
         $params = [
-            'cookie' => $cookie,
+            'user' => $user,
             'required' => $request['required_value'],
             'optional' => isset($request['optional_value']) ? $request['optional_value'] : ''
         ];
@@ -57,7 +57,7 @@ class CrudModel extends Model
         return $data[0][0];
     }
 
-    public function update($cookie, array $request, $id)  
+    public function update($user, array $request, $id)  
     {       
         $isStoredProcedure = true;
 
@@ -68,7 +68,7 @@ class CrudModel extends Model
         }
 
         $params = [
-            'cookie' => $cookie,
+            'user' => $user,
             'required' => $request['required_value'],
             'optional' => isset($request['optional_value']) ? $request['optional_value'] : '',
             'id' => $id
@@ -79,14 +79,14 @@ class CrudModel extends Model
         return $data[0][0];
     }
     
-    public function delete($cookie, array $request, $id)  
+    public function delete($user, array $request, $id)  
     {       
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_delete';
 
         $params = [
-            'cookie' => $cookie,
+            'user' => $user,
             'id' => $id
         ];
 
