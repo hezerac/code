@@ -9,7 +9,7 @@ class RestApi
 
     private $code = null;   
 
-    public function response($data)   
+    public function json($data)   
     {       
         header('Content-Type: application/json');
         
