@@ -21,11 +21,11 @@ class CrudController
 
             $data = (new CrudModel)->getAll($cookie, $request);
 
-            $response = (new RestApi)->setCode(200)->response($data);
+            $response = (new RestApi)->setCode(200)->json($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 
@@ -39,11 +39,11 @@ class CrudController
 
             $data = (new CrudModel)->getOne($cookie, $request, $id);
 
-            $response = (new RestApi)->setCode(200)->response($data);
+            $response = (new RestApi)->setCode(200)->json($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 
@@ -57,11 +57,11 @@ class CrudController
 
             $data = (new CrudModel)->create($cookie, $request);
 
-            $response = (new RestApi)->setCode(200)->response($data);
+            $response = (new RestApi)->setCode(200)->json($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 
@@ -75,11 +75,11 @@ class CrudController
 
             $data = (new CrudModel)->update($cookie, $request, $id);
 
-            $response = (new RestApi)->setCode(200)->response($data);
+            $response = (new RestApi)->setCode(200)->json($data);
 
         } catch (Exception $e) {
 
-            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 
@@ -93,11 +93,11 @@ class CrudController
 
             $data = (new CrudModel)->delete($cookie, $request, $id);
 
-            $response = (new RestApi)->setCode(200)->response($data);
+            $response = (new RestApi)->setCode(200)->json($data);
 
         } catch (Exception $e) {
             
-            $response = (new RestApi)->setCode($e->getCode())->response($e->getMessage());
+            $response = (new RestApi)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 
