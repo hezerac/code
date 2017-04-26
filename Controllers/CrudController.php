@@ -15,11 +15,11 @@ class CrudController
     {
         try {
 
-            //$cookie = (new Cookie)->bake();
+            //$user = (new Cookie)->bake(); //TODO: make Cookie class
 
             $request = (new Request)->get();
 
-            $data = (new CrudModel)->getAll($cookie, $request);
+            $data = (new CrudModel)->getAll($user, $request);
 
             $response = (new Response)->setCode(200)->json($data);
 
@@ -33,11 +33,11 @@ class CrudController
     {
         try {
 
-            //$cookie = (new Cookie)->bake();
+            //$user = (new Cookie)->bake();
 
             $request = (new Request)->get();
 
-            $data = (new CrudModel)->getOne($cookie, $request, $id);
+            $data = (new CrudModel)->getOne($user, $request, $id);
 
             $response = (new Response)->setCode(200)->json($data);
 
@@ -51,11 +51,11 @@ class CrudController
     {
         try {
 
-            //$cookie = (new Cookie)->bake();
+            //$user = (new Cookie)->bake();
 
             $request = (new Request)->post();
 
-            $data = (new CrudModel)->create($cookie, $request);
+            $data = (new CrudModel)->create($user, $request);
 
             $response = (new Response)->setCode(200)->json($data);
 
@@ -69,11 +69,11 @@ class CrudController
     {
         try {
 
-            //$cookie = (new Cookie)->bake();
+            //$user = (new Cookie)->bake();
 
             $request = (new Request)->put();
 
-            $data = (new CrudModel)->update($cookie, $request, $id);
+            $data = (new CrudModel)->update($user, $request, $id);
 
             $response = (new Response)->setCode(200)->json($data);
 
@@ -87,11 +87,11 @@ class CrudController
     {
         try {
 
-            //$cookie = (new Cookie)->bake();
+            //$user = (new Cookie)->bake();
 
             $request = (new Request)->delete();
 
-            $data = (new CrudModel)->delete($cookie, $request, $id);
+            $data = (new CrudModel)->delete($user, $request, $id);
 
             $response = (new Response)->setCode(200)->json($data);
 
