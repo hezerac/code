@@ -8,7 +8,7 @@ namespace Controllers;
 use Models\CrudModel;
 use Utilities\HTTP\{Request, Response};
 
-class CrudController
+class CrudApiController
 {
 
     public function getAll()
