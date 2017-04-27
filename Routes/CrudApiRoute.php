@@ -4,7 +4,7 @@
  *
  */
  
-$app = /Router;
+$app = new Router;
 
 
 $app->get('/','/Controllers/CrudApiController:getAll');
