@@ -1,6 +1,6 @@
 <?php
 /**
- * Crud Controller
+ * Crud API Controller
  *
  */
 namespace Controllers;
