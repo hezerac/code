@@ -9,8 +9,6 @@ class CrudModel extends Model
 
     public function getAll($user, array $request)  
     {
-        //header($request[0][0]); //Does this belong here? Am I breaking srp?
-     
         $isStoredProcedure = true;
 
         $sql = 'stored_procedure_name_get_all';
