@@ -17,7 +17,7 @@ class CrudApiController
 
             //$user = (new Cookie)->bake(); //TODO: make Cookie class
 
-            $request = (new Request)->get();
+            //$request = (new Request)->get();
 
             $data = (new CrudModel)->getAll($user, $request);
 
@@ -35,7 +35,7 @@ class CrudApiController
 
             //$user = (new Cookie)->bake();
 
-            $request = (new Request)->get();
+            //$request = (new Request)->get();
 
             $data = (new CrudModel)->getOne($user, $request, $id);
 
@@ -89,7 +89,7 @@ class CrudApiController
 
             //$user = (new Cookie)->bake();
 
-            $request = (new Request)->delete();
+            //$request = (new Request)->delete();
 
             $data = (new CrudModel)->delete($user, $request, $id);
 
