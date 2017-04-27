@@ -4,11 +4,12 @@
  */
 namespace Views\Templates;
 
-class Template
+abstract class Template
 {
 
+    abstract protected function doSomeWork()
+    {}
     
-
 }
 
 ?>
