@@ -1,10 +1,7 @@
-<?php
-/**
- * Footer Template
- *
- */
 
-        <footer></footer>
+
+        <footer><?= $footer ?></footer>
     <script></script>
+    <?= $footerScripts ?>
 </body>
-?>
+
