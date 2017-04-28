@@ -9,7 +9,9 @@
         
         <link href="/public/css/pretty.css" rel="stylesheet">
         <?= $links ?>
-        <?= $scripts ?>
+        
+        <script></script>
+        <?= $headScripts ?>
     </head>
     <body>
         <header>
