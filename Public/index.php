@@ -4,6 +4,6 @@
  *
  */
 
-require_once 'template.php'
+require_once 'master-template.php'
 
 ?>
