@@ -7,11 +7,6 @@ namespace App\HTTP;
 
 class Request  
 {
-
-    public function get()
-    {   
-        return [];
-    }
     
     public function post()
     {
@@ -21,11 +16,6 @@ class Request
     public function put()
     {
         return $_POST;
-    }
-    
-    public function delete()
-    {
-        return [];
     }
 
 }
