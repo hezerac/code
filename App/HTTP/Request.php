@@ -3,7 +3,7 @@
  * HTTP Request
  *
  */
-namespace App/HTTP;
+namespace App\HTTP;
 
 class Request  
 {
