@@ -2,7 +2,7 @@
 /**
  * Crud Model
  */
-namespace Models;
+namespace App\Models;
  
 class CrudModel extends Model
 {
