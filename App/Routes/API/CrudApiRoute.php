@@ -5,17 +5,17 @@
  */
 namespace App\Routes\API;
  
-$app->get('/','API/CrudApiController:getAll')
+$app->get('/','CrudApiController:getAll')
     ->name('crud.api.get.all');
 
-$app->get('/:id','API/CrudApiController:getOne')
+$app->get('/:id','CrudApiController:getOne')
     ->name('crud.api.get.one');
 
-$app->post('/','API/CrudApiController:create')
+$app->post('/','CrudApiController:create')
     ->name('crud.api.create');
 
-$app->put('/:id','API/CrudApiController:update')
+$app->put('/:id','CrudApiController:update')
     ->name('crud.api.update');
 
-$app->delete('/:id','API/CrudApiController:delete')
+$app->delete('/:id','CrudApiController:delete')
     ->name('crud.api.delete');
