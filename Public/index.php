@@ -3,6 +3,7 @@
  *
  *
  */
+use App;
 
 require_once 'bootstrap.php';
 
