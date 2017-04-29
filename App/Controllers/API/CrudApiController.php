@@ -9,6 +9,7 @@ use Models\CrudModel;
 
 use Utilities\HTTP\{Request, Response};
 
+
 class CrudApiController
 {
 
@@ -30,7 +31,7 @@ class CrudApiController
         }
     }
 
-      public function getOne($id)
+    public function getOne($id)
     {
         try {
 
@@ -66,7 +67,7 @@ class CrudApiController
         }
     }
   
-      public function update($id)
+    public function update($id)
     {
         try {
 
