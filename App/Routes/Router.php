@@ -3,7 +3,7 @@
  * Router
  *
  */
-namespace Routes;
+namespace App\Routes;
 
 class Router
 {
