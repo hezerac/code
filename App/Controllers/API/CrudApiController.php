@@ -3,11 +3,11 @@
  * Crud API Controller
  *
  */
-namespace Controllers;
+namespace App/Controllers/API;
 
-use Models/CrudModel;
+use App/Models/CrudModel;
 
-use Utilities/HTTP/{Request, Response};
+use App/HTTP/{Request, Response};
 
 
 class CrudApiController
