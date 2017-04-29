@@ -4,14 +4,14 @@
  *
  */
  
-$app->get('/','/Controllers/CrudApiController:getAll');
+$app->get('/','API/CrudApiController:getAll');
 
-$app->get('/:id','/Controllers/CrudApiController:getOne');
+$app->get('/:id','API/CrudApiController:getOne');
 
-$app->post('/','/Controllers/CrudApiController:create');
+$app->post('/','API/CrudApiController:create');
 
-$app->put('/:id','/Controllers/CrudApiController:update');
+$app->put('/:id','API/CrudApiController:update');
 
-$app->delete('/:id','/Controllers/CrudApiController:delete');
+$app->delete('/:id','API/CrudApiController:delete');
 
 ?>
