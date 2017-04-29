@@ -7,6 +7,9 @@ namespace App\Routes;
 
 class Router
 {
+    
+    private $name = [];
+
     private $uri = [];
     
     private $method = [];
@@ -55,9 +58,9 @@ class Router
         $this->add($uri, $method))
     }
 
-    public function name($name) //TODO: name method
+    public function name($name)
     {
-        
+        $this->name[] = $name;
     }
     
     private function add($uri, $method))
