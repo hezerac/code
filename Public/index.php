@@ -4,6 +4,8 @@
  *
  */
 
-require_once 'master-template.php'
+require_once 'bootstrap.php';
+
+$app->run();
 
 ?>
