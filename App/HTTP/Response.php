@@ -3,7 +3,7 @@
  * HTTP Response
  *
  */
-namespace App/HTTP;
+namespace App\HTTP;
 
 class Response   
 {
