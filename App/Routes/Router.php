@@ -23,7 +23,7 @@ class Router
             
             $parts = explode(':', $this->method[$key]);
 
-            $controller = new $parts[0]();
+            $controller = new App/Controllers/$parts[0]();
 
             $method = $parts[1];
             
@@ -34,8 +34,7 @@ class Router
             $controller->$method($args);
         }   
     }
-            
-    
+
     public function get($uri, $method)
     {       
         $this->add($uri, $method))
