@@ -5,9 +5,9 @@
  */
 namespace App\Controllers\API;
 
-use App/Models/CrudModel;
+use App\Models\CrudModel;
 
-use App/HTTP/{Request, Response};
+use App\HTTP\{Request, Response};
 
 
 class CrudApiController
