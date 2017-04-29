@@ -35,8 +35,6 @@ class CrudModel extends Model
 
         return $data[0][0];
     }
-
-
     
     public function create($user, array $request) 
     {  
@@ -80,7 +78,6 @@ class CrudModel extends Model
 
         return $data[0][0];
     }
-
     
     public function delete($user, array $request, $id)  
     {       
