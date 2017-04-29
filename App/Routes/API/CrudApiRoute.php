@@ -13,5 +13,3 @@ $app->post('/','API/CrudApiController:create');
 $app->put('/:id','API/CrudApiController:update');
 
 $app->delete('/:id','API/CrudApiController:delete');
-
-?>
