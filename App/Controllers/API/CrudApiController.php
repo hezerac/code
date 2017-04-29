@@ -3,7 +3,7 @@
  * Crud API Controller
  *
  */
-namespace App/Controllers/API;
+namespace App\Controllers\API;
 
 use App/Models/CrudModel;
 
