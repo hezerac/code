@@ -4,7 +4,7 @@
  *
  */
 namespace Routes;
-​
+
 class Router
 {
     private $uri = [];
@@ -16,21 +16,21 @@ class Router
         $uri = htmlspecialchars($_GET['uri']);
         
         $destination = isset($uri) ? '/' . $uri : '/'; //TODO: fix this business
-​
-        foreach($this->uri as $key => $value) {
+
+        foreach ($this->uri as $key => $value) {
             
-            if(!strstr($destination, $value)) continue;
+            if (!strstr($destination, $value)) continue;
             
             $parts = explode(':', $this->method[$key]);
-​
+
             $controller = new $parts[0]();
-​
+
             $method = $parts[1];
             
             $args = (substr_count($value, ':') > 1)
                 ? $this->getArgs($value) 
                 : $this->getArg($value);
-​
+
             $controller->$method($args);
         }   
     }
@@ -40,11 +40,10 @@ class Router
     {       
         $this->add($uri, $method))
     }   
-​
+
     public function post($uri, $method)  
     {       
         $this->add($uri, $method))  
-​
     }   
     
     public function put($uri, $method)  
@@ -56,7 +55,7 @@ class Router
     {       
         $this->add($uri, $method))
     }
-​
+
     public function name($name) //TODO: name method
     {
         
@@ -69,11 +68,9 @@ class Router
         $this->method[] = $method;  
     }
             
-    
-
     private function getArg($value)
     {
-        if(!strpos($value, ':')) return null;
+        if (!strpos($value, ':')) return null;
             
         return htmlentities(
             $_GET[explode(':', $value)[1]], 
@@ -88,7 +85,7 @@ class Router
         
         $args = array_filter($parts, function($val, $key) 
         {
-            if(!($key % 2)) return htmlentities(
+            if (!($key % 2)) return htmlentities(
                 $_GET[$val], 
                 ENT_QUOTES, 
                 'UTF-8'
@@ -97,6 +94,6 @@ class Router
         
         return implode(', ', $args);
     }
-​
+
 }
 
