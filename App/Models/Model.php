@@ -3,9 +3,9 @@
  * Model
  *
  */
-namespace Models;
+namespace App\Models;
 
-use Database/Connection;
+use Database\Connection;
         
 class Model
 {
