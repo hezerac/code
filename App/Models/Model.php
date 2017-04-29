@@ -5,7 +5,7 @@
  */
 namespace Models;
 
-use Database\Connection;
+use Database/Connection;
         
 class Model
 {
@@ -19,7 +19,7 @@ class Model
     
     public function call($sql, array $params, $isStoredProcedure)
     {
-        if($isStoredProcedure) {
+        if ($isStoredProcedure) {
             $sql = 'CALL '. $sql .'('. $this->placeholder($params) .')';
         }
 
@@ -37,8 +37,10 @@ class Model
       
     private function bindAll($stmt, $params) 
     {           
-        foreach($params as $key => $value) {                    
+        foreach ($params as $key => $value) {                    
 
             $stmt->bindParam(':$key', $value);          
         }
     }
+
+}
