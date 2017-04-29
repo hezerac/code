@@ -23,7 +23,7 @@ class Router
             
             $parts = explode(':', $this->method[$key]);
 
-            $controller = new App/Controllers/$parts[0]();
+            $controller = new App\Controllers\$parts[0]();
 
             $method = $parts[1];
             
