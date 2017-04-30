@@ -10,7 +10,7 @@ class Request
     
     public function post()
     {
-        return filter_var_array($_POST, FILTER_SANITIZE_STRING)
+        return $_POST;
     }
     
     public function put()
