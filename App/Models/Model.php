@@ -6,6 +6,8 @@
 namespace App\Models;
 
 use Database\Connection;
+
+use App\Utilities;
         
 class Model
 {
@@ -28,6 +30,8 @@ class Model
         $this->bindAll($stmt, $params);
         
         $stmt->execute();
+        //sanitize data
+        (new Sanitizer)->encode($data);
     }   
       
     private function placeholder($params)       
