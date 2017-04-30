@@ -4,8 +4,6 @@
  *
  */
 namespace App\Models;
-
-use App\Utilities;
  
 class CrudModel extends Model
 {
