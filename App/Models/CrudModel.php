@@ -1,13 +1,16 @@
 <?php
 /**
  * Crud Model
+ *
  */
 namespace App\Models;
+
+use App\Utilities;
  
 class CrudModel extends Model
 {
 
-    public function getAll($user, array $request)  
+    public function getAll($user)  
     {
         $isStoredProcedure = true;
 
@@ -16,11 +19,15 @@ class CrudModel extends Model
         $params = [ 'user' => $user ];
 
         $data = parent::call($sql, $params, $isStoredProcedure);
+        
+        //$parse = (new Parser)->parse($data);
+        
+        $response = (new Sanitizer)->encode($data[0]);
 
-        return $data[0];
+        return $response;
     }
     
-    public function getOne($user, array $request, $id)  
+    public function getOne($user, $id)  
     {       
         $isStoredProcedure = true;
 
@@ -33,7 +40,9 @@ class CrudModel extends Model
 
         $data = parent::call($sql, $params, $isStoredProcedure);
 
-        return $data[0][0];
+        $response = (new Sanitizer)->encode($data[0][0]);
+        
+        return $response
     }
     
     public function create($user, array $request) 
@@ -54,7 +63,9 @@ class CrudModel extends Model
 
         $data = parent::call($sql, $params, $isStoredProcedure);
 
-        return $data[0][0];
+        $response = (new Sanitizer)->encode($data[0][0]);
+        
+        return $response;
     }
 
     public function update($user, array $request, $id)  
@@ -76,10 +87,12 @@ class CrudModel extends Model
 
         $data = parent::call($sql, $params, $isStoredProcedure);
 
-        return $data[0][0];
+        $response = (new Sanitizer)->encode($data[0][0]);
+        
+        return $response;
     }
     
-    public function delete($user, array $request, $id)  
+    public function delete($user, $id)  
     {       
         $isStoredProcedure = true;
 
