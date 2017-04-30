@@ -19,12 +19,8 @@ class CrudModel extends Model
         $params = [ 'user' => $user ];
 
         $data = parent::call($sql, $params, $isStoredProcedure);
-        
-        //$parse = (new Parser)->parse($data);
-        
-        $response = (new Sanitizer)->encode($data[0]);
 
-        return $response;
+        return $data[0];
     }
     
     public function getOne($user, $id)  
@@ -40,9 +36,7 @@ class CrudModel extends Model
 
         $data = parent::call($sql, $params, $isStoredProcedure);
 
-        $response = (new Sanitizer)->encode($data[0][0]);
-        
-        return $response;
+        return $data[0][0];
     }
     
     public function create($user, array $request) 
@@ -63,9 +57,7 @@ class CrudModel extends Model
 
         $data = parent::call($sql, $params, $isStoredProcedure);
 
-        $response = (new Sanitizer)->encode($data[0][0]);
-        
-        return $response;
+        return $data[0][0];
     }
 
     public function update($user, array $request, $id)  
@@ -87,9 +79,7 @@ class CrudModel extends Model
 
         $data = parent::call($sql, $params, $isStoredProcedure);
 
-        $response = (new Sanitizer)->encode($data[0][0]);
-        
-        return $response;
+        return $data[0][0];
     }
     
     public function delete($user, $id)  
