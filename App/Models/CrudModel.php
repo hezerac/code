@@ -42,7 +42,7 @@ class CrudModel extends Model
 
         $response = (new Sanitizer)->encode($data[0][0]);
         
-        return $response
+        return $response;
     }
     
     public function create($user, array $request) 
