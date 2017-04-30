@@ -30,8 +30,12 @@ class Model
         $this->bindAll($stmt, $params);
         
         $stmt->execute();
-        //sanitize data
-        (new Sanitizer)->encode($data);
+            
+        $data = (new Sanitizer)->encode(
+            $stmt->fetchAll(PDO::FETCH_ASSOC)
+        );
+        
+        return $data;
     }   
       
     private function placeholder($params)       
