@@ -10,7 +10,7 @@ use App\Models\CrudModel;
 use App\HTTP\{Request, Response};
 
 
-class CrudApiController
+class CrudController
 {
 
     public function getAll()
