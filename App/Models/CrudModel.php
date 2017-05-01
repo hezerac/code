@@ -43,7 +43,7 @@ class CrudModel extends Model
 
         $sql = 'stored_procedure_name_create';
 
-        if(!isset($request['required_value']) || empty($request['required_value'])) {
+        if (!isset($request['required_value']) || empty($request['required_value'])) {
             throw new \Exception(__METHOD__ . '::Missing require value.', 400);
         }
 
@@ -64,7 +64,7 @@ class CrudModel extends Model
 
         $sql = 'stored_procedure_name_update';
 
-        if(!isset($request['required_value']) || empty($request['required_value'])) {
+        if (!isset($request['required_value']) || empty($request['required_value'])) {
             throw new \Exception(__METHOD__ . '::Missing require value.', 400);
         }
 
