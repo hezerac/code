@@ -45,10 +45,7 @@ class Model
       
     private function bindAll($stmt, $params) 
     {           
-        foreach ($params as $key => $value) {                    
-
-            $stmt->bindParam(':$key', $value);          
-        }
+        foreach ($params as $key => $value) $stmt->bindParam(':$key', $value);
     }
 
 }
