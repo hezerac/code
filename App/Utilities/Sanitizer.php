@@ -3,6 +3,7 @@
  * Sanitizer
  *
  */
+namespace App\Utilities;
 
 class Sanitizer
 {
