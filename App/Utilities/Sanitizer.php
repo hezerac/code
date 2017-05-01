@@ -9,7 +9,7 @@ class Sanitizer
 
     public function encode($data)
     {
-        return htmlentities($data, ENT_QUOTES, 'UTF-8');
+        return filter_var_array($data, FILTER_SANITIZE_STRING);
     }
 
 }
