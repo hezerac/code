@@ -31,7 +31,7 @@ class Model
         
         $stmt->execute();
             
-        $data = (new Sanitizer)->encode(
+        $data = (new Sanitizer)->escape(
             $stmt->fetchAll(PDO::FETCH_ASSOC)
         );
         
