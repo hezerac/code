@@ -17,7 +17,7 @@ class CrudController
     {
         try {
 
-            $user = (new Cookie)->bake(); //TODO: make Cookie class
+            $user = (new Cookie)->getCookie(); //TODO: make Cookie class
 
             $data = (new CrudModel)->getAll($user);
 
@@ -33,7 +33,7 @@ class CrudController
     {
         try {
 
-            $user = (new Cookie)->bake();
+            $user = (new Cookie)->getCookie();
 
             $data = (new CrudModel)->getOne($user, $id);
 
@@ -49,7 +49,7 @@ class CrudController
     {
         try {
 
-            $user = (new Cookie)->bake();
+            $user = (new Cookie)->getCookie();
 
             $request = (new Request)->post();
 
@@ -67,7 +67,7 @@ class CrudController
     {
         try {
 
-            $user = (new Cookie)->bake();
+            $user = (new Cookie)->getCookie();
 
             $request = (new Request)->put();
 
@@ -85,7 +85,7 @@ class CrudController
     {
         try {
 
-            $user = (new Cookie)->bake();
+            $user = (new Cookie)->getCookie();
 
             $data = (new CrudModel)->delete($user, $id);
 
