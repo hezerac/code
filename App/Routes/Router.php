@@ -5,6 +5,8 @@
  */
 namespace App\Routes;
 
+use App\Utilities;
+
 class Router
 {
     
@@ -74,10 +76,8 @@ class Router
     {
         if (!strpos($value, ':')) return null;
             
-        return htmlentities(
+        return (new Sanitizer)->escape(
             $_GET[explode(':', $value)[1]], 
-            ENT_QUOTES, 
-            'UTF-8'
         );
     }
     
@@ -87,11 +87,8 @@ class Router
         
         $args = array_filter($parts, function($val, $key) 
         {
-            if (!($key % 2)) return htmlentities(
-                $_GET[$val], 
-                ENT_QUOTES, 
-                'UTF-8'
-            );
+            if (!($key % 2)) return (new Sanitizer)->escape($_GET[$val]);
+
         }, ARRAY_FILTER_USE_BOTH);
         
         return implode(', ', $args);
