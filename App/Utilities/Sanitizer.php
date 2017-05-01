@@ -7,7 +7,7 @@
 class Sanitizer
 {
 
-    public function encode($data)
+    public function escape($data)
     {
         return filter_var_array($data, FILTER_SANITIZE_SPECIAL_CHARS);
     }
