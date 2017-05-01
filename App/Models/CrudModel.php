@@ -50,7 +50,7 @@ class CrudModel extends Model
         $params = [
             'user' => $user,
             'required' => $request['required_value'],
-            'optional' => isset($request['optional_value']) ? $request['optional_value'] : ''
+            'optional' => $request['optional_value'] ?? null
         ];
 
         $data = parent::call($sql, $params, $isStoredProcedure);
@@ -71,7 +71,7 @@ class CrudModel extends Model
         $params = [
             'user' => $user,
             'required' => $request['required_value'],
-            'optional' => isset($request['optional_value']) ? $request['optional_value'] : '',
+            'optional' => $request['optional_value'] ?? null,
             'id' => $id
         ];
 
