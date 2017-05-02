@@ -4,18 +4,18 @@
  *
  */
 namespace App\Routes\API;
- 
-$app->get('/','CrudApiController:getAll')
-    ->name('crud.api.get.all');
-
-$app->get('/:id','CrudApiController:getOne')
-    ->name('crud.api.get.one');
-
-$app->post('/','CrudApiController:create')
-    ->name('crud.api.create');
-
-$app->put('/:id','CrudApiController:update')
-    ->name('crud.api.update');
-
-$app->delete('/:id','CrudApiController:delete')
-    ->name('crud.api.delete');
+    
+$app->get('/','CrudController:getAll')
+    ->name('crud.get.all');
+    
+$app->get('/:id','CrudController:getOne')
+    ->name('crud.get.one');
+    
+$app->post('/','CrudController:create')
+    ->name('crud.create');
+    
+$app->put('/:id','CrudController:update')
+    ->name('crud.update');
+    
+$app->delete('/:id','CrudController:delete')
+    ->name('crud.delete');
