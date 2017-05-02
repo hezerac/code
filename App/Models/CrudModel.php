@@ -56,7 +56,7 @@ class CrudModel extends Model
         
         return $data[0][0];
     }
-
+    
     public function update($user, array $request, $id)  
     {       
         $isStoredProcedure = true;
