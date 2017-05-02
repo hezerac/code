@@ -11,7 +11,6 @@ use App\Utilities;
     
 class Model
 {
-
     protected $db = null;
         
     public function __construct()       
@@ -24,7 +23,7 @@ class Model
         if ($isStoredProcedure) {
             $sql = 'CALL '. $sql .'('. $this->placeholder($params) .')';
         }
-
+        
         $stmt = $this->db->prepare($sql);
         
         $this->bindAll($stmt, $params);
@@ -47,5 +46,4 @@ class Model
     {           
         foreach ($params as $key => $value) $stmt->bindParam(':$key', $value);
     }
-
 }
