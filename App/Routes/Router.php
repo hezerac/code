@@ -4,11 +4,9 @@
  *
  */
 namespace App\Routes;
-
-
+    
 class Router
 {
-    
     private $name = [];
     
     private $route = [];
@@ -79,6 +77,5 @@ class Router
     {
         return '/' . ($_GET['uri'] ?? '');
     }
-
 }
 
