@@ -23,7 +23,7 @@ class CrudController
 
             $response = (new Response)->setCode(200)->json($data);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
@@ -39,7 +39,7 @@ class CrudController
 
             $response = (new Response)->setCode(200)->json($data);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
@@ -57,7 +57,7 @@ class CrudController
 
             $response = (new Response)->setCode(201)->json($data);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
@@ -75,7 +75,7 @@ class CrudController
 
             $response = (new Response)->setCode(201)->json($data);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
@@ -91,7 +91,7 @@ class CrudController
 
             $response = (new Response)->setCode(204)->json($data);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
