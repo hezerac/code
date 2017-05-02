@@ -37,7 +37,7 @@ class Router
     {
         switch ($_SERVER['REQUEST_METHOD']) {
                 
-            case 'GET': return $_GET;
+            case 'GET': return array_values($_GET);
 
             case 'POST': return $_POST;
 
