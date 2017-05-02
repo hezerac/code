@@ -1,5 +1,11 @@
         <main>
-            <!-- main content -->
+                
+        <? foreach($items as $item): ?>
+                
+            <!-- print some items -->
+                
+        <? endforeach; ?>
+                
         </main>
 
         <? $leftSideBar ?? '<!-- No Left Sidebar -->' ?>
