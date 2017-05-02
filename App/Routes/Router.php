@@ -10,25 +10,25 @@ class Router
 {
     
     private $name = [];
-
-    private $uri = [];
+    
+    private $route = [];
     
     private $method = [];
     
     public function run()   
     {   
-        foreach ($this->uri as $key => $value) {
+        foreach ($this->route as $key => $value) {
             
             if (!strstr($this->getUri(), $value)) continue;
             
             $parts = explode(':', $this->method[$key]);
-
+            
             $controller = new App\HTTP\Controllers\$parts[0]();
-
+            
             $method = $parts[1];
             
             $args = $this->request();
-
+            
             $controller->$method(...$args);
         }   
     }
@@ -38,41 +38,39 @@ class Router
         switch ($_SERVER['REQUEST_METHOD']) {
                 
             case 'GET': return array_values($_GET);
-
+                
             case 'POST': return $_POST;
-
-            default null;
         }
     }
     
-    public function get($uri, $method)
+    public function get($route, $method)
     {       
-        $this->add($uri, $method))
-    }   
-
-    public function post($uri, $method)  
-    {       
-        $this->add($uri, $method))  
+        $this->add($route, $method))
     }   
     
-    public function put($uri, $method)  
+    public function post($route, $method)  
     {       
-        $this->add($uri, $method))
+        $this->add($route, $method))  
     }   
     
-    public function delete($uri, $method)  
+    public function put($route, $method)  
     {       
-        $this->add($uri, $method))
+        $this->add($route, $method))
+    }   
+    
+    public function delete($route, $method)  
+    {       
+        $this->add($route, $method))
     }
-
+    
     public function name($name)
     {
         $this->name[] = $name;
     }
     
-    private function add($uri, $method))
+    private function add($route, $method))
     {
-        $this->uri[] = $uri;
+        $this->route[] = $route;
         
         $this->method[] = $method;  
     }
