@@ -7,7 +7,7 @@ namespace App\HTTP\Controllers;
 
 use App\Models\CrudModel;
 
-use App\HTTP\{Request, Response};
+use App\HTTP\Response;
 
 
 class CrudController
