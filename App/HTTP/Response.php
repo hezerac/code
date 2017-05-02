@@ -4,16 +4,15 @@
  *
  */
 namespace App\HTTP;
-
+    
 class Response   
 {
-
     private $code = null;
-
+    
     public function json($data)
     {
         header('Content-Type: application/json');
-
+        
         return json_encode(
             $this->code >= 200 && $this->code <= 299
                 ? $this->success($data)
@@ -35,5 +34,4 @@ class Response
     {
         $this->code = $code;
     }
-
 }
