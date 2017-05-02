@@ -4,19 +4,19 @@
  *
  */
 namespace App\Models;
-
+    
 use Database\Connection;
-
+    
 use App\Utilities;
-        
+    
 class Model
 {
 
     protected $db = null;
-
+        
     public function __construct()       
     {           
-        $this->db = Connection::established();
+        $this->db = Connection::established(); //TODO fix this business
     }
     
     public function call($sql, array $params, $isStoredProcedure)
