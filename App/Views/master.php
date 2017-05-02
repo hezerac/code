@@ -3,6 +3,8 @@
  * Master Template
  *
  */
+
+require 'Template.php';
     
 require 'header.php';
     
