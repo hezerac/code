@@ -18,7 +18,7 @@ class Model
         $this->db = Connection::established(); //TODO fix this business
     }
     
-    public function call($sql, array $params, $isStoredProcedure)
+    protected function call($sql, array $params, $isStoredProcedure)
     {
         if ($isStoredProcedure) {
             $sql = 'CALL '. $sql .'('. $this->placeholder($params) .')';
