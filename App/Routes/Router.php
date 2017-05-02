@@ -5,7 +5,6 @@
  */
 namespace App\Routes;
 
-use App\Utilities;
 
 class Router
 {
@@ -17,14 +16,10 @@ class Router
     private $method = [];
     
     public function run()   
-    {       
-        $uri = htmlspecialchars($_GET['uri']);
-        
-        $destination = isset($uri) ? '/' . $uri : '/'; //TODO: fix this business
-
+    {   
         foreach ($this->uri as $key => $value) {
             
-            if (!strstr($destination, $value)) continue;
+            if (!strstr($this->getUri(), $value)) continue;
             
             $parts = explode(':', $this->method[$key]);
 
@@ -80,6 +75,11 @@ class Router
         $this->uri[] = $uri;
         
         $this->method[] = $method;  
+    }
+    
+    private function getUri()
+    {
+        return '/' . ($_GET['uri'] ?? '');
     }
 
 }
