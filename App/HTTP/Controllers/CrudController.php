@@ -51,7 +51,7 @@ class CrudController
 
             $user = (new Cookie)->getCookie();
 
-            $request = (new Request)->post();
+            $request = (new Router)->request();
 
             $data = (new CrudModel)->create($user, $request);
 
@@ -69,7 +69,7 @@ class CrudController
 
             $user = (new Cookie)->getCookie();
 
-            $request = (new Request)->put();
+            $request = (new Router)->request();
 
             $data = (new CrudModel)->update($user, $request, $id);
 
