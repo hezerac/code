@@ -4,15 +4,13 @@
  *
  */
 namespace App\HTTP\Controllers;
-
+    
 use App\Models\CrudModel;
-
+    
 use App\HTTP\Response;
-
-
+    
 class CrudController
 {
-
     public function getAll()
     {
         try {
@@ -28,7 +26,7 @@ class CrudController
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
-
+    
     public function getOne($id)
     {
         try {
@@ -44,7 +42,7 @@ class CrudController
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
-
+    
     public function create()
     {
         try {
@@ -62,7 +60,7 @@ class CrudController
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
-  
+    
     public function update($id)
     {
         try {
@@ -80,7 +78,7 @@ class CrudController
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
-
+    
     public function delete($id)
     {
         try {
@@ -96,5 +94,4 @@ class CrudController
             $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
-
 }
