@@ -19,17 +19,17 @@ class Response
                 : $this->error($data)
         );
     }
-
+    
     private function success(array $data)
     {
         return ['code' => $this->code, 'data' => $data];
     }
-
+    
     private function error($message)
     {
         return ['error' => ['code' => $this->code, 'message' => $message]];
     }
-
+    
     public function setCode($code)
     {
         $this->code = $code;
