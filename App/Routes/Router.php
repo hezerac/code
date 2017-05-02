@@ -32,14 +32,24 @@ class Router
 
             $method = $parts[1];
             
-            $args = (substr_count($value, ':') > 1)
-                ? $this->getArgs($value) 
-                : $this->getArg($value);
+            $args = $this->request();
 
-            $controller->$method($args);
+            $controller->$method(...$args);
         }   
     }
+    
+    public function request()
+    {
+        switch ($_SERVER['REQUEST_METHOD']) {
+                
+            case 'GET': return $_GET;
 
+            case 'POST': return $_POST;
+
+            default null;
+        }
+    }
+    
     public function get($uri, $method)
     {       
         $this->add($uri, $method))
@@ -70,28 +80,6 @@ class Router
         $this->uri[] = $uri;
         
         $this->method[] = $method;  
-    }
-            
-    private function getArg($value)
-    {
-        if (!strpos($value, ':')) return null;
-            
-        return (new Sanitizer)->escape(
-            $_GET[explode(':', $value)[1]], 
-        );
-    }
-    
-    private function getArgs($value)
-    {
-        $parts = explode(':', $value); //TODO: must remove trailing slashes too
-        
-        $args = array_filter($parts, function($val, $key) 
-        {
-            if (!($key % 2)) return (new Sanitizer)->escape($_GET[$val]);
-
-        }, ARRAY_FILTER_USE_BOTH);
-        
-        return implode(', ', $args);
     }
 
 }
