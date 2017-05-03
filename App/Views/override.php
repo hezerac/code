@@ -8,7 +8,7 @@
 
 $metas = '';
 
-$title = '';
+$title = 'Default Title';
 
 $links = '';
 
