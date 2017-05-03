@@ -4,7 +4,7 @@
  *
  */
 
-$file = $_SERVER['PHP_SELF'];
+$script = $_SERVER['PHP_SELF'];
     
 //requires
     
