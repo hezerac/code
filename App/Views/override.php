@@ -2,7 +2,7 @@
 /**
  * Override Template
  *
- * Initializes values which can be overridden by {$script}_template.php
+ * Initializes values which can be overridden by {$currentScript}_template.php
  *
  */
 
@@ -24,4 +24,4 @@ $footer = '';
 
 $footerScripts = '';
 
-require '/templates/' . $script . '_template.php';
+require '/templates/' . $currentScript . '_template.php';
