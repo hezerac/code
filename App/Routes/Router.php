@@ -33,9 +33,7 @@ class Router
     
     public function request()
     {
-        return $_SERVER['REQUEST_METHOD'] === 'GET'
-            ? $_GET 
-            : $_POST;
+        return $_SERVER['REQUEST_METHOD'] === 'GET' ? $_GET : $_POST;
     }
     
     public function get($route, $method)
