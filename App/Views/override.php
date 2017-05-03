@@ -5,7 +5,7 @@
  * Initializes values which can be overridden by {$currentScript}_template.php
  *
  */
-
+    
 $metas = '';
     
 $title = 'Default Title';
