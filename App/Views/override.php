@@ -10,9 +10,9 @@ $headScripts = '';
 
 $navigation = '';
 
-$leftSideBar = '';
+$leftSideBar = null;
 
-$rightSideBar = '';
+$rightSideBar = null;
 
 $footer = '';
 
