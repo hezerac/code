@@ -4,6 +4,7 @@
  *
  */
 
+$file = $_SERVER['PHP_SELF'];
     
 //requires
     
