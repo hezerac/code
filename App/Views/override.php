@@ -1,4 +1,10 @@
 <?php
+/**
+ * Override Template
+ *
+ * Initializes values which can be overridden by $script.template.php
+ *
+ */
 
 $metas = '';
 
