@@ -15,5 +15,8 @@
     </head>
     <body>
         <header>
+            <a href="/">
+                <img src="images/logo.png" alt="Logo">
+            </a>
             <nav><?= $navigation ?></nav>
         </header>
