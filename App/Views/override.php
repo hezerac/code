@@ -7,21 +7,21 @@
  */
 
 $metas = '';
-
+    
 $title = 'Default Title';
-
+    
 $links = '';
-
+    
 $headScripts = '';
-
+    
 $navigation = '';
-
+    
 $leftSideBar = null;
-
+    
 $rightSideBar = null;
-
+    
 $footer = '';
-
+    
 $footerScripts = '';
-
+    
 require '/templates/' . $currentScript . '_template.php';
