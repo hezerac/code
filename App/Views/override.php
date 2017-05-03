@@ -24,4 +24,4 @@ $footer = '';
     
 $footerScripts = '';
     
-require '/templates/' . $currentScript . '_template.php';
+require '/Templates/' . ucfirst(($currentScript)). '_template.php';
