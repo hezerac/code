@@ -1,10 +1,6 @@
         <main>
                 
-        <? foreach($items as $item): ?>
-                
-            <!-- print some items -->
-                
-        <? endforeach; ?>
+            <!-- main content -->
                 
         </main>
 
