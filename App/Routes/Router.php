@@ -25,7 +25,7 @@ class Router
             
             $method = $parts[1];
             
-            $args = $this->request();
+            $args = array_values($this->request());
             
             $controller->$method(...$args);
         }   
@@ -34,9 +34,8 @@ class Router
     public function request()
     {
         return $_SERVER['REQUEST_METHOD'] === 'GET'
-            ? array_values($_GET)
+            ? $_GET 
             : $_POST;
-        }
     }
     
     public function get($route, $method)
