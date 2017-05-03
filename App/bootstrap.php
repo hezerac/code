@@ -4,7 +4,7 @@
  *
  */
 
-$script = $_SERVER['PHP_SELF'];
+$currentScript = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
     
 //requires
     
