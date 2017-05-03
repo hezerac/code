@@ -33,11 +33,9 @@ class Router
     
     public function request()
     {
-        switch ($_SERVER['REQUEST_METHOD']) {
-                
-            case 'GET': return array_values($_GET);
-                
-            case 'POST': return $_POST;
+        return $_SERVER['REQUEST_METHOD'] === 'GET'
+            ? array_values($_GET)
+            : $_POST;
         }
     }
     
