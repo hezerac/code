@@ -47,3 +47,4 @@ class Model
         foreach ($params as $key => $value) $stmt->bindParam(':$key', $value);
     }
 }
+?>
