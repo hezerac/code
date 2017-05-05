@@ -29,12 +29,12 @@ class Model
         $this->bindAll($stmt, $params);
         
         $stmt->execute();
-            
-        $data = (new Sanitizer)->escape(
-            $stmt->fetchAll(PDO::FETCH_ASSOC)
-        );
         
-        return $data;
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        $sanitaryData = (new Sanitizer)->escape($data);
+        
+        return $sanitaryData;
     }   
       
     private function placeholder($params)       
