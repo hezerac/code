@@ -1,6 +1,6 @@
         <main>
                 
-            <!-- main content -->
+            <?= $mainContent ?>
                 
         </main>
 
