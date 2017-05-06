@@ -7,6 +7,6 @@ namespace App\Routes\Page;
     
 $app->post('/crud/', function() use ($app) {
     $app->redirect(
-        $app->getUri()
+        $app->urlFor('crud.get.all')
     );
 });
