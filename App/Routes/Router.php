@@ -36,6 +36,11 @@ class Router
         return $_SERVER['REQUEST_METHOD'] === 'GET' ? $_GET : $_POST;
     }
     
+    public function redirect()
+    {
+        //TODO
+    }
+    
     public function get($route, $method)
     {       
         $this->add($route, $method))
