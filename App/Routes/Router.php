@@ -80,7 +80,7 @@ class Router
     
     private function getUrl()
     {
-        return ('/' . ($_GET['uri'] ?? ''));
+        return '/' . ($_GET['uri'] ?? '');
     }
 }
 
