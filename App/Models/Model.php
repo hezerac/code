@@ -13,7 +13,7 @@ class Model
 {
     protected $db = null;
         
-    public function __construct()       
+    protected function __construct()       
     {           
         $this->db = Connection::established(); //TODO fix this business
     }
