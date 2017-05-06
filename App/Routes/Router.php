@@ -17,7 +17,7 @@ class Router
     {   
         foreach ($this->route as $key => $value) {
             
-            if (!strstr($this->getUri(), $value)) continue;
+            if (!strstr($this->getUrl(), $value)) continue;
             
             $parts = explode(':', $this->method[$key]);
             
@@ -38,7 +38,12 @@ class Router
     
     public function redirect()
     {
-        //TODO
+        //TODO:
+    }
+    
+    public function forUrl()
+    {
+        //TODO:
     }
     
     public function get($route, $method)
@@ -73,7 +78,7 @@ class Router
         $this->method[] = $method;  
     }
     
-    private function getUri()
+    private function getUrl()
     {
         return '/' . ($_GET['uri'] ?? '');
     }
