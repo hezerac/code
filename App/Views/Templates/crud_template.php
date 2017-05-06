@@ -15,6 +15,7 @@ $mainContent = <<<HTML
         <input type="text" id="">
         <label for="">Textarea:</label>
         <textarea id=""></textarea>
+        <input type="submit" value="Submit" id="">
     </form>
 HTML;
     
