@@ -16,6 +16,8 @@ $headScripts = '';
     
 $navigation = '';
     
+$mainContent = '';
+    
 $leftSideBar = null;
     
 $rightSideBar = null;
