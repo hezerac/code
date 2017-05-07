@@ -6,6 +6,6 @@ fetch(url)
 
 let fragment = document.createDocumentFragment();
 let div = document.createElement('div');
-div.innerHTML = data;
-fragment.appendChild(div);
+let content = document.createTextNode(data.value);
+fragment.appendChild(div).appendChild(content);
 document.querySelector('main').appendChild(fragment);
