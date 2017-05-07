@@ -1,8 +1,8 @@
 class Crud extends Create.View {}
 
 fetch(url)
-	.then(resource => resource.json)
-	.then(data => {});
+    .then(resource => resource.json)
+    .then(data => {});
 
 let fragment = document.createDocumentFragment();
 let div = document.createElement('div');
