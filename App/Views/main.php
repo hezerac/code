@@ -1,7 +1,5 @@
         <main>
                 
-            <?= $mainContent ?>
-                
         </main>
 
         <? $leftSideBar ?? '<!-- No Left Sidebar -->' ?>
