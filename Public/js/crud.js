@@ -4,9 +4,9 @@
 
     let div = document.createElement('div');
 
-    div.innerHTML = 'text';
+    div.innerHTML = 'data';
 
-	frag.appendChild(div);
+	fragment.appendChild(div);
 
     document.body.main.appendChild(fragment);
 
