@@ -2,12 +2,14 @@
     
     let fragment = document.createDocumentFragment();
 
+
     let div = document.createElement('div');
 
     div.innerHTML = 'data';
 
 	fragment.appendChild(div);
 
-    document.body.main.appendChild(fragment);
+
+    document.querySelector('main').appendChild(fragment);
 
 //}
