@@ -1,4 +1,6 @@
-class Crud extends Create.View {}
+class Crud extends Create.View {
+
+}
 
 fetch(url)
     .then(resource => resource.json)
