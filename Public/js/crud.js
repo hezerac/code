@@ -6,8 +6,21 @@ fetch(url)
     .then(resource => resource.json)
     .then(data => {});
 
-let fragment = document.createDocumentFragment();
-let div = document.createElement('div');
-let content = document.createTextNode(data.value);
-fragment.appendChild(div).appendChild(content);
-document.querySelector('main').appendChild(fragment);
+
+const create = (...args) =>
+{
+    const fragment = document.createDocumentFragment();
+    
+    for(let i = args[2] || 1; i > 0; i--) 
+    {
+        let element = document.createElement(args[1] || 'div');
+        
+        let content = document.createTextNode(args[0]);
+        
+        fragment.appendChild(element).appendChild(content);
+    }
+    
+    document.querySelector('main').appendChild(fragment);
+}
+
+create('some.data', null, 7);
