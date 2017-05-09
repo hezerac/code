@@ -3,7 +3,7 @@ const create = (data, elements = []) =>
 {
     const fragment = document.createDocumentFragment();
     
-    for(let i = 0; i < data.length; i++) 
+    for (let i = 0; i < data.length; i++) 
     {
         const element = document.createElement(elements[i] || 'div');
         
