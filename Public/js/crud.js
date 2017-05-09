@@ -3,11 +3,11 @@ const create = (data, elements = []) =>
 {
     const fragment = document.createDocumentFragment();
     
-    for (let i = 0; i < data.length; i++) 
+    Object.keys(data).forEach(key =>
     {
-        const element = document.createElement(elements[i] || 'div');
+        const element = document.createElement(elements[key] || 'div');
         
-        const content = document.createTextNode(data[i]);
+        const content = document.createTextNode(data[key]);
         
         fragment.appendChild(element).appendChild(content);
     }
