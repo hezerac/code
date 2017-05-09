@@ -16,12 +16,12 @@ const createFragments = () =>
 }
 
 fetch(url).then(response => response.json()).then(data => 
-{
-	const fragment = createFragments();
+{        
+	const fragment = createFragments();  
 	
-	Object.keys(data).forEach(key => 
-		fragment.add(data[key], 'div');
-	);
+	Object.keys(data).forEach(key => {                
+		fragment.add(data[key], 'div');    
+	});    
 	
 	fragment.make();
 });
