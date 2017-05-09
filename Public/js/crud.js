@@ -1,11 +1,3 @@
-class Crud extends Create.View {
-
-}
-
-fetch(url)
-    .then(resource => resource.json)
-    .then(data => {});
-
 
 const create = (...args) =>
 {
@@ -23,4 +15,9 @@ const create = (...args) =>
     document.querySelector('main').appendChild(fragment);
 }
 
-create('some.data', null, 7);
+
+fetch(url)
+    .then(resource => resource.json)
+    .then(data => create(data, null, 7));
+
+
