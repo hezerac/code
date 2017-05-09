@@ -10,13 +10,13 @@ const create = (data, elements = []) =>
         const content = document.createTextNode(data[key]);
         
         fragment.appendChild(element).appendChild(content);
-    }
+    });
     
     document.querySelector('main').appendChild(fragment);
 }
 
 fetch(url)
-    .then(resource => resource.json)
+    .then(response => response.json)
     .then(data => create(data));
 
 
