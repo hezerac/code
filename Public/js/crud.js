@@ -3,9 +3,10 @@ const createFragments = () =>
     const fragment = document.createDocumentFragment();
     
     return {
-        create(content, element = 'div') {
+        create(content, element = 'div', attribute = null) {
             let c = document.createTextNode(content);
             let e = document.createElement(element);
+            if (attribute) e.setAttribute(attribute);
             fragment.appendChild(e).appendChild(c);
         },
         render(element = 'main') {
@@ -20,7 +21,7 @@ fetch(url).then(response => response.json()).then(data =>
     const fragment = createFragments();
     
     Object.key(data).forEach(key => {
-        fragment.create(data[key]);
+        fragment.create(data[key], 'div', ['class', 'examples']);
     });
     
     fragment.render();
