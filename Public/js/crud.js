@@ -3,10 +3,10 @@ const createFragments = () =>
     const fragment = document.createDocumentFragment();
     
     return {
-        create(content, element = 'div', attribute = null) {
+        create(content, element = 'div', attribute = []) {
             let c = document.createTextNode(content);
             let e = document.createElement(element);
-            if (attribute) e.setAttribute(attribute);
+            if (attribute) e.setAttribute(...attribute);
             fragment.appendChild(e).appendChild(c);
         },
         render(element = 'main') {
