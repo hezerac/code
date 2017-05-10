@@ -4,8 +4,8 @@ const createFragments = () =>
     
     return {
         add(content, element) {
-            const c = document.createTextNode(content);
-            const e = document.createElement(element);
+            let c = document.createTextNode(content);
+            let e = document.createElement(element);
             fragment.appendChild(e).appendChild(c);
         },
         make() {
