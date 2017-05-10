@@ -8,7 +8,7 @@ const createFragments = () =>
             let e = document.createElement(element);
             fragment.appendChild(e).appendChild(c);
         },
-        make(element = 'main') {
+        render(element = 'main') {
             if (!fragment.hasChildNodes()) return;
             document.querySelector(element).appendChild(fragment);
         }
@@ -23,5 +23,5 @@ fetch(url).then(response => response.json()).then(data =>
         fragment.add(data[key]);
     });
     
-    fragment.make();
+    fragment.render();
 });
