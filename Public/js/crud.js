@@ -8,9 +8,9 @@ const createFragments = () =>
             let e = document.createElement(element);
             fragment.appendChild(e).appendChild(c);
         },
-        make() {
+        make(element = 'main') {
             if (!fragment.hasChildNodes()) return;
-            document.querySelector('main').appendChild(fragment);
+            document.querySelector(element).appendChild(fragment);
         }
     };
 }
