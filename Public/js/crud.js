@@ -16,7 +16,7 @@ const createFragments = () =>
 }
 
 fetch(url).then(response => response.json()).then(data => 
-{        
+{
 	const fragment = createFragments();  
 	
 	Object.keys(data).forEach(key => {                
