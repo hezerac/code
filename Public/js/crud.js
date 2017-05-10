@@ -20,8 +20,12 @@ fetch(url).then(response => response.json()).then(data =>
 {
     const fragment = createFragments();
     
+    fragment.create(data.title, 'h1');
+    
+    fragment.create(data.description, 'p')
+    
     Object.key(data).forEach(key => {
-        fragment.create(data[key], 'div', ['class', 'examples']);
+        fragment.create(data[key].value, 'div', ['class', 'examples']);
     });
     
     fragment.render();
