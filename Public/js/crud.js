@@ -4,18 +4,13 @@ const createFragments = () =>
     
     return {
         create(content, element = 'div', attribute = []) {
-            if (!content) {
-                throw 'Create method requires the content argument.';
-            }
             let c = document.createTextNode(content);
             let e = document.createElement(element);
             if (attribute.length) e.setAttribute(...attribute);
             fragment.appendChild(e).appendChild(c);
         },
         render(element = 'main') {
-            if (!fragment.hasChildNodes()) {
-                throw 'Fragment has no child nodes.';
-            }
+            if (!fragment.hasChildNodes()) return;
             document.querySelector(element).appendChild(fragment);
         }
     };
@@ -34,4 +29,4 @@ fetch(url).then(response => response.json()).then(data =>
     });
     
     fragment.render();
-}).catch(error => { console.log(error) });
+});
