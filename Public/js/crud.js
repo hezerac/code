@@ -4,13 +4,18 @@ const createFragments = () =>
     
     return {
         create(content, element = 'div', attribute = []) {
+            if (!content) {
+                throw 'Content is missing from fragment.';
+            }
             let c = document.createTextNode(content);
             let e = document.createElement(element);
             if (attribute.length) e.setAttribute(...attribute);
             fragment.appendChild(e).appendChild(c);
         },
         render(element = 'main') {
-            if (!fragment.hasChildNodes()) return;
+            if (!fragment.hasChildNodes()) {
+                throw 'Fragment has no child nodes.';
+            }
             document.querySelector(element).appendChild(fragment);
         }
     };
@@ -29,4 +34,4 @@ fetch(url).then(response => response.json()).then(data =>
     });
     
     fragment.render();
-});
+}).catch(error => console.log(error));
