@@ -5,7 +5,7 @@ const createFragments = () =>
     return {
         create(content, element = 'div', attribute = []) {
             if (!content) {
-                throw 'Content is missing from fragment.';
+                throw 'Create method requires the content argument.';
             }
             let c = document.createTextNode(content);
             let e = document.createElement(element);
