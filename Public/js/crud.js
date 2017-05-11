@@ -34,4 +34,4 @@ fetch(url).then(response => response.json()).then(data =>
     });
     
     fragment.render();
-}).catch(error => console.log(error));
+}).catch(error => { console.log(error) });
