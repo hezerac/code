@@ -2,11 +2,15 @@ const createFragments = () =>
 {
     const fragment = document.createDocumentFragment();
     
+    const setAttributes = (element, attributes) => {
+        for (let key in attributes) element.setAttribute(key, attributes[key]);
+    };
+    
     return {
-        create(content, element = 'div', attribute = []) {
+        create(content, element = 'div', attributes = {}) {
             let c = document.createTextNode(content);
             let e = document.createElement(element);
-            if (attribute.length) e.setAttribute(...attribute);
+            if (Object.keys(attributes).length) setAttribute(e, attributes);
             fragment.appendChild(e).appendChild(c);
         },
         render(element = 'main') {
@@ -25,7 +29,7 @@ fetch(url).then(response => response.json()).then(data =>
     fragment.create(data.description, 'p');
     
     Object.key(data).forEach(key => {
-        fragment.create(data[key].value, 'div', ['class', 'examples']);
+        fragment.create(data[key].value, 'div', { 'class': 'examples' });
     });
     
     fragment.render();
