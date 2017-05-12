@@ -28,7 +28,7 @@ fetch(url).then(response => response.json()).then(data =>
     
     fragment.create(data.description, 'p');
     
-    Object.key(data).forEach(key => {
+    Object.keys(data).forEach(key => {
         fragment.create(data[key].value, 'div', { 'class': 'examples' });
     });
     
