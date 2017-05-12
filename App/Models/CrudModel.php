@@ -80,6 +80,6 @@ class CrudModel extends Model
             'id' => $id
         ];
         
-        parent::call($sql, $params);
+        return parent::call($sql, $params);
     }
 }
