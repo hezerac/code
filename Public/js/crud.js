@@ -10,7 +10,7 @@ const createFragments = () =>
         create(content, element = 'div', attributes = {}) {
             let c = document.createTextNode(content);
             let e = document.createElement(element);
-            if (Object.keys(attributes).length) setAttribute(e, attributes);
+            if (Object.keys(attributes).length) setAttributes(e, attributes);
             fragment.appendChild(e).appendChild(c);
         },
         render(element = 'main') {
