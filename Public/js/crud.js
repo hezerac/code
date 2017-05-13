@@ -1,4 +1,6 @@
-const createFragments = () =>
+document.body.addEventListener();
+    
+constconstconst createFragments = () =>
 {
     const fragment = document.createDocumentFragment();
     
@@ -20,6 +22,12 @@ const createFragments = () =>
     };
 }
 
+////
+
+const events = {
+    'click', 'buildResults'
+};
+    
 fetch(url).then(response => response.json()).then(data =>
 {
     const fragment = createFragments();
