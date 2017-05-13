@@ -25,7 +25,7 @@ const createFragments = () =>
 ////
 
 const events = {
-    'click', 'buildResults'
+    'click': 'buildResults'
 };
     
 fetch(url).then(response => response.json()).then(data =>
