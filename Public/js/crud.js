@@ -4,7 +4,7 @@ const eventListeners = () =>
     
     return {
         addListener(events) {
-            for (let key in events) body.addEventListener(key, events[key]);
+            for (let key in events) body.addEventListener(key, events[key]());
         }
     };
 }
