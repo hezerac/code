@@ -1,6 +1,6 @@
 document.body.addEventListener();
     
-constconstconst createFragments = () =>
+const createFragments = () =>
 {
     const fragment = document.createDocumentFragment();
     
