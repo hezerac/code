@@ -1,4 +1,13 @@
-document.body.addEventListener();
+const eventListeners = () => 
+{
+    const body = document.body;
+    
+    return {
+        addListener(events) {
+            for (let key in events) body.addEventListener(key, events[key]);
+        }
+    };
+}
     
 const createFragments = () =>
 {
