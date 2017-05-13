@@ -30,7 +30,7 @@ class Response
         return ['error' => ['code' => $this->code, 'message' => $message]];
     }
     
-    public function setCode($code)
+    public function setCode(int $code)
     {
         $this->code = $code;
     }
