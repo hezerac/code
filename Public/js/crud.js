@@ -38,12 +38,14 @@ const createFragments = () =>
     };
 }
 
-////
-const event = createEventListeners();
-
-event.create('click', 'buildResults');
-
-event.render();
+const events = () =>
+{
+    const event = createEventListeners();
+    
+    event.create('click', 'buildResults');
+    
+    event.render();
+};
 
 const buildResults = () => 
 {
