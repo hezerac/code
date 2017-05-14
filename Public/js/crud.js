@@ -1,7 +1,5 @@
-const createEventListeners = () => 
+const createEventListeners = (events = {}) => 
 {
-    const events = {};
-    
     return {
         create(event, callback) {
             events.event = callback;
