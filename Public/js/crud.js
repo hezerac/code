@@ -1,4 +1,4 @@
-const eventListeners = () => 
+const createEventListeners = () => 
 {
     const events = {};
     
@@ -19,7 +19,9 @@ const createFragments = () =>
     const fragment = document.createDocumentFragment();
     
     const setAttributes = (element, attributes) => {
-        for (let key in attributes) element.setAttribute(key, attributes[key]);
+        for (let key in attributes) {
+            element.setAttribute(key, attributes[key]);
+        }
     };
     
     return {
@@ -37,15 +39,13 @@ const createFragments = () =>
 }
 
 ////
+const event = createEventListeners();
 
-const event = eventListeners();
-
-event.create('click': 'buildResults');
+event.create('click', 'buildResults');
 
 event.render();
 
-    
-fetch(url).then(response => response.json()).then(data =>
+const buildResults = () => 
 {
     const fragment = createFragments();
     
@@ -58,4 +58,8 @@ fetch(url).then(response => response.json()).then(data =>
     });
     
     fragment.render();
-});
+};
+    
+fetch(url)
+    .then(response => response.json())
+    .then(data => { buildResults(data) });
