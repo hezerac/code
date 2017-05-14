@@ -1,10 +1,15 @@
 const eventListeners = () => 
 {
-    const body = document.body;
+    const events = {};
     
     return {
-        addListener(events) {
-            for (let key in events) body.addEventListener(key, events[key]());
+        create(event, callback) {
+            events.event = callback;
+        },
+        render() {
+            for (let key in events) {
+                document.body.addEventListener(key, events[key]());
+            }
         }
     };
 }
@@ -33,9 +38,12 @@ const createFragments = () =>
 
 ////
 
-const events = {
-    'click': 'buildResults'
-};
+const event = eventListeners();
+
+event.create('click': 'buildResults');
+
+event.render();
+
     
 fetch(url).then(response => response.json()).then(data =>
 {
