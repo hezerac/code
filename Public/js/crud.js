@@ -38,7 +38,7 @@ const createFragments = () =>
     };
 }
 
-const events = () =>
+const buildEvents = () =>
 {
     const event = createEventListeners();
     
