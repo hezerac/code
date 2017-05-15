@@ -1,4 +1,6 @@
-const createEventListeners = (events = {}) => 
+const main = {};
+
+main.createEventListeners = (events = {}) => 
 {
     return {
         create(event, callback) {
@@ -12,7 +14,7 @@ const createEventListeners = (events = {}) =>
     };
 }
     
-const createFragments = () =>
+main.createFragments = () =>
 {
     const fragment = document.createDocumentFragment();
     
