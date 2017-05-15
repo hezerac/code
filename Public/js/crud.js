@@ -40,7 +40,7 @@ main.createFragments = () =>
 
 const crud = Object.create(main);
 
-crud.buildEvents = () =>
+const buildEvents = () =>
 {
     const event = createEventListeners();
     
@@ -49,14 +49,14 @@ crud.buildEvents = () =>
     event.render();
 };
 
-crud.buildResults = () =>
+const buildResults = () =>
 {
     fetch(url)
-    .then(response => response.json())
-    .then(data => { buildContent(data) });
+        .then(response => response.json())
+        .then(data => { buildContent(data) });
 };
 
-crud.buildContent = (data) => 
+const buildContent = (data) => 
 {
     const fragment = createFragments();
     
