@@ -46,13 +46,6 @@ crud.buildEvents = () =>
     event.render();
 };
 
-crud.buildResults = () =>
-{
-    fetch(url)
-        .then(response => response.json())
-        .then(data => { this.buildContent(data) });
-};
-
 crud.buildContent = (data) => 
 {
     const fragment = createFragments();
@@ -68,4 +61,9 @@ crud.buildContent = (data) =>
     fragment.render();
 };
     
-
+crud.buildResults = () =>
+{
+    fetch(url)
+        .then(response => response.json())
+        .then(data => { this.buildContent(data) });
+};
