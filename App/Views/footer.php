@@ -1,7 +1,7 @@
 
 
         <footer><?= $footer ?></footer>
-    <script></script>
+    <script src='/Resources/Main.js></script>
     <?= $footerScripts ?>
 </body>
 
