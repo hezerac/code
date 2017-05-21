@@ -20,6 +20,11 @@ class Response
         );
     }
     
+    public function setCode(int $code)
+    {
+        $this->code = $code;
+    }
+    
     private function success(array $data)
     {
         return ['code' => $this->code, 'data' => $data];
@@ -28,10 +33,5 @@ class Response
     private function error($message)
     {
         return ['error' => ['code' => $this->code, 'message' => $message]];
-    }
-    
-    public function setCode(int $code)
-    {
-        $this->code = $code;
     }
 }
