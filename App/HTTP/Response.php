@@ -30,7 +30,7 @@ class Response
         return ['status' => $this->code, 'data' => $data];
     }
     
-    private function error($message) : array
+    private function error(string $message) : array
     {
         return ['status' => $this->code, 'error' => ['message' => $message]];
     }
