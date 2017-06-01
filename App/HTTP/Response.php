@@ -20,18 +20,18 @@ class Response
         );
     }
     
-    public function setCode(int $code)
+    public function setCode(int $code) : void
     {
         $this->code = $code;
     }
     
-    private function success(array $data)
+    private function success(array $data) : array
     {
-        return ['code' => $this->code, 'data' => $data];
+        return ['status' => $this->code, 'data' => $data];
     }
     
-    private function error($message)
+    private function error($message) : array
     {
-        return ['error' => ['code' => $this->code, 'message' => $message]];
+        return ['status' => $this->code, 'error' => ['message' => $message]];
     }
 }
