@@ -13,18 +13,11 @@ class Response
     {
         header('Content-Type: application/json');
         
-        $response = $this->createResponse($data);
-        
-        return json_encode($response);
+        return json_encode(['status' => $this->code, $data]);
     }
     
     public function setCode(int $code) : void
     {
         $this->code = $code;
-    }
-    
-    private function createResponse($data) : array
-    {
-        return ['status' => $this->code, $data];
     }
 }
