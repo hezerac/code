@@ -1,6 +1,6 @@
 <?php
 /**
- * HTTP Response
+ * Response
  *
  */
 namespace App\HTTP;
