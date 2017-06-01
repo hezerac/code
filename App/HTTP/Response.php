@@ -13,11 +13,9 @@ class Response
     {
         header('Content-Type: application/json');
         
-        return json_encode(
-            $this->code >= 200 && $this->code <= 299
-                ? $this->success($data)
-                : $this->error($data)
-        );
+        $response = $this->createResponse($data);
+        
+        return json_encode($response);
     }
     
     public function setCode(int $code) : void
@@ -25,13 +23,8 @@ class Response
         $this->code = $code;
     }
     
-    private function success(array $data) : array
+    private function createResponse($data) : array
     {
-        return ['status' => $this->code, 'data' => $data];
-    }
-    
-    private function error(string $message) : array
-    {
-        return ['status' => $this->code, 'error' => ['message' => $message]];
+        return ['status' => $this->code, $data];
     }
 }
