@@ -9,7 +9,7 @@ class Response
 {
     private $code = null;
     
-    public function json($data)
+    public function json($data) : string
     {
         header('Content-Type: application/json');
         
