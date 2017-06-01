@@ -53,11 +53,11 @@ class CrudController
             
             $data = (new CrudModel)->create($user, $request);
             
-            $response = (new Response)->setCode(201)->json($data);
+            (new Response)->setCode(201)->json($data);
             
         } catch (Exception $e) {
             
-            $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
     
@@ -71,11 +71,11 @@ class CrudController
             
             $data = (new CrudModel)->update($user, $request, $id);
             
-            $response = (new Response)->setCode(201)->json($data);
+            (new Response)->setCode(201)->json($data);
             
         } catch (Exception $e) {
             
-            $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
     
@@ -87,11 +87,11 @@ class CrudController
             
             $data = (new CrudModel)->delete($user, $id);
             
-            $response = (new Response)->setCode(204)->json($data);
+            (new Response)->setCode(204)->json($data);
             
         } catch (Exception $e) {
             
-            $error = (new Response)->setCode($e->getCode())->json($e->getMessage());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 }
