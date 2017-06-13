@@ -2,7 +2,7 @@ const crud = Object.create(main);
 
 crud.buildEvents = () =>
 {
-    const event = createEventListeners();
+    const event = this.createEventListeners();
     
     event.create('click', 'crud.buildResults');
     
@@ -11,7 +11,7 @@ crud.buildEvents = () =>
 
 crud.buildContent = (data) => 
 {
-    const fragment = createFragments();
+    const fragment = this.createFragments();
     
     fragment.create(data.title, 'h1');
     
