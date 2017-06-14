@@ -6,7 +6,7 @@ const main = {
             },
             render() {
                 for (let key in events) {
-                    document.body.addEventListener(key, events[key]());
+                    document.body.addEventListener(key, events[key]);
                 }
             }
         };
