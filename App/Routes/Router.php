@@ -17,7 +17,7 @@ class Router
     {   
         foreach ($this->route as $key => $value) {
             
-            if (!strstr($this->getUrl(), $value)) continue;
+            if (strpos($this->getUrl(), $value) === false) continue;
             
             $parts = explode(':', $this->method[$key]);
             
