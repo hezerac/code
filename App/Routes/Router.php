@@ -19,7 +19,7 @@ class Router
             
             if (strpos($this->getUrl(), $value) === false) continue;
             
-            if ($this->isCallback($this->method[$key])) break;
+            if ($this->isCallback($this->method[$key])) continue;
             
             $parts = explode(':', $this->method[$key]);
             
