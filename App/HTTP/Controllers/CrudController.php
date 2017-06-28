@@ -15,7 +15,7 @@ class CrudController
     {
         try {
             
-            $user = (new Cookie)->getCookie(); //TODO: make Cookie class
+            $user = (new Cookie)->getCookie(); //TODO: make authorization class
             
             $data = (new CrudModel)->getAll($user);
             
