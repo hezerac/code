@@ -60,7 +60,7 @@ class Router
         $this->add($route, $method);
     }
     
-    public function name($name)
+    public function name(string $name)
     {
         //$this->name[] = $name;
     }
