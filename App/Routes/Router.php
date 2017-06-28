@@ -19,17 +19,9 @@ class Router
             
             if (strpos($this->getUrl(), $value) === false) continue;
             
-            if ($this->isCallback($this->method[$key])) continue;
-            
-            $parts = explode(':', $this->method[$key]);
-            
-            $controller = new \App\HTTP\Controllers\$parts[0];
-            
-            $method = $parts[1];
-            
-            $args = array_values($this->request());
-            
-            $controller->$method(...$args);
+            is_callback($this->method[$key])
+                ? call_user_func($this->method[$key])
+                : $this->callMethod($this->method[$key]);
         }   
     }
     
@@ -73,11 +65,17 @@ class Router
         //$this->name[] = $name;
     }
     
-    private function isCallback($method) : bool
+    private function callMethod($method)
     {
-        if (!is_callable($method)) return false;
+        $parts = explode(':', $method);
             
-        call_user_func($method); return true;
+        $controller = new \App\HTTP\Controllers\$parts[0];
+            
+        $method = $parts[1];
+            
+        $args = array_values($this->request());
+            
+        $controller->$method(...$args);
     }
     
     private function add(string $route, string $method) : void
