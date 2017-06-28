@@ -19,12 +19,7 @@ class Router
             
             if (strpos($this->getUrl(), $value) === false) continue;
             
-            if (is_callable($this->method[$key])) {
-                
-                call_user_func($this->method[$key]);
-                
-                break;
-            }
+            if ($this->isCallback($this->method[$key])) break;
             
             $parts = explode(':', $this->method[$key]);
             
@@ -76,6 +71,13 @@ class Router
     public function name($name)
     {
         //$this->name[] = $name;
+    }
+    
+    private function isCallback($method) : bool
+    {
+        if (!is_callable($method)) return false;
+            
+        call_user_func($method); return true;
     }
     
     private function add(string $route, string $method) : void
