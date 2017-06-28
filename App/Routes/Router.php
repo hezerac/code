@@ -25,7 +25,7 @@ class Router
         }   
     }
     
-    public function request()
+    public function request() : array
     {
         return $_SERVER['REQUEST_METHOD'] === 'GET' ? $_GET : $_POST;
     }
