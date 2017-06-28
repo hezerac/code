@@ -65,7 +65,7 @@ class Router
         //$this->name[] = $name;
     }
     
-    private function callMethod($method)
+    private function callMethod(string $method)
     {
         $parts = explode(':', $method);
             
