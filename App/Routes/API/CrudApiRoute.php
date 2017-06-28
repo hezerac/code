@@ -3,7 +3,6 @@
  * Crud API Routes
  *
  */
-namespace App\Routes\API;
     
 $app->get('/crud/','CrudController:getAll')
     ->name('crud.get.all');
