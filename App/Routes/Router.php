@@ -21,7 +21,7 @@ class Router
             
             is_callback($this->method[$key])
                 ? call_user_func($this->method[$key])
-                : $this->callMethod($this->method[$key]);
+                : $this->call($this->method[$key]);
         }   
     }
     
@@ -65,7 +65,7 @@ class Router
         //$this->name[] = $name;
     }
     
-    private function callMethod(string $method)
+    private function call(string $method)
     {
         $parts = explode(':', $method);
             
