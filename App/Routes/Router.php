@@ -71,7 +71,7 @@ class Router
         //$this->name[] = $name;
     }
     
-    private function add($route, $method) : void
+    private function add($route, string $method) : void
     {
         $this->route[] = $route;
         
