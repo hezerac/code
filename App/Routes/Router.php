@@ -19,6 +19,13 @@ class Router
             
             if (strpos($this->getUrl(), $value) === false) continue;
             
+            if (is_callable($this->method[$key])) {
+                
+                call_user_func($this->method[$key]);
+                
+                break;
+            }
+            
             $parts = explode(':', $this->method[$key]);
             
             $controller = new \App\HTTP\Controllers\$parts[0];
@@ -48,22 +55,22 @@ class Router
     
     public function get($route, $method)
     {       
-        is_callable($method) ? call_user_func($method) : $this->add($route, $method);
+        $this->add($route, $method);
     }   
     
     public function post($route, $method)  
     {       
-        is_callable($method) ? call_user_func($method) : $this->add($route, $method);
+        $this->add($route, $method);
     }   
     
     public function put($route, $method)  
     {       
-        is_callable($method) ? call_user_func($method) : $this->add($route, $method);
+        $this->add($route, $method);
     }   
     
     public function delete($route, $method)  
     {       
-        is_callable($method) ? call_user_func($method) : $this->add($route, $method);
+        $this->add($route, $method);
     }
     
     public function name($name)
