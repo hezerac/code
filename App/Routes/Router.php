@@ -78,7 +78,7 @@ class Router
         $controller->$method(...$args);
     }
     
-    private function add(string $route, string $method) : void
+    private function add(string $route, $method) : void
     {
         $this->route[] = $route;
         
