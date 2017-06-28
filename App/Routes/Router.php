@@ -15,8 +15,8 @@ class Router
     
     public function run()   
     {   
-        foreach ($this->route as $key => $value) {
-            
+        foreach ($this->route as $key => $value)
+        {
             if (strpos($this->getUrl(), $value) === false) continue;
             
             is_callback($this->method[$key])
