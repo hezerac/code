@@ -46,10 +46,11 @@ class Router
         //TODO:
     }
     
-    public function get($route, $method)
+    public function get(string $route, $method)
     {       
         if (is_callable($method)) {
             call_user_func($method);
+            return;
         }
         
         $this->route[] = $route;
@@ -57,10 +58,11 @@ class Router
         $this->method[] = $method;
     }   
     
-    public function post($route, $method)  
+    public function post(string $route, $method)  
     {       
         if (is_callable($method)) {
             call_user_func($method);
+            return;
         }
         
         $this->route[] = $route;
@@ -68,10 +70,11 @@ class Router
         $this->method[] = $method;  
     }   
     
-    public function put($route, $method)  
+    public function put(string $route, $method)  
     {       
         if (is_callable($method)) {
             call_user_func($method);
+            return;
         }
         
         $this->route[] = $route;
@@ -79,10 +82,11 @@ class Router
         $this->method[] = $method;
     }   
     
-    public function delete($route, $method)  
+    public function delete(string $route, $method)  
     {       
         if (is_callable($method)) {
             call_user_func($method);
+            return;
         }
         
         $this->route[] = $route;
@@ -92,7 +96,7 @@ class Router
     
     public function name($name)
     {
-        $this->name[] = $name;
+        //$this->name[] = $name;
     }
     
     private function getUrl()
