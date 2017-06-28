@@ -48,50 +48,30 @@ class Router
     
     public function get(string $route, $method)
     {       
-        if (is_callable($method)) {
-            call_user_func($method);
-            return;
-        }
-        
-        $this->route[] = $route;
-        
-        $this->method[] = $method;
+        is_callable($method)
+            ? call_user_func($method)
+            : $this->add($route, $method);
     }   
     
     public function post(string $route, $method)  
     {       
-        if (is_callable($method)) {
-            call_user_func($method);
-            return;
-        }
-        
-        $this->route[] = $route;
-        
-        $this->method[] = $method;  
+        is_callable($method)
+            ? call_user_func($method)
+            : $this->add($route, $method); 
     }   
     
     public function put(string $route, $method)  
     {       
-        if (is_callable($method)) {
-            call_user_func($method);
-            return;
-        }
-        
-        $this->route[] = $route;
-        
-        $this->method[] = $method;
+        is_callable($method)
+            ? call_user_func($method)
+            : $this->add($route, $method);
     }   
     
     public function delete(string $route, $method)  
     {       
-        if (is_callable($method)) {
-            call_user_func($method);
-            return;
-        }
-        
-        $this->route[] = $route;
-        
-        $this->method[] = $method;
+        is_callable($method) 
+            ? call_user_func($method) 
+            : $this->add($route, $method);
     }
     
     public function name($name)
@@ -99,7 +79,14 @@ class Router
         //$this->name[] = $name;
     }
     
-    private function getUrl()
+    private function add($route, $method) : void
+    {
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
+    }
+    
+    private function getUrl() : string
     {
         return '/' . ($_GET['url'] ?? '');
     }
