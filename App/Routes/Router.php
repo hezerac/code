@@ -48,34 +48,51 @@ class Router
     
     public function get($route, $method)
     {       
-        $this->add($route, $method))
+        if (is_callable($method)) {
+            call_user_func($method);
+        }
+        
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }   
     
     public function post($route, $method)  
     {       
-        $this->add($route, $method))  
+        if (is_callable($method)) {
+            call_user_func($method);
+        }
+        
+        $this->route[] = $route;
+        
+        $this->method[] = $method;  
     }   
     
     public function put($route, $method)  
     {       
-        $this->add($route, $method))
+        if (is_callable($method)) {
+            call_user_func($method);
+        }
+        
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }   
     
     public function delete($route, $method)  
     {       
-        $this->add($route, $method))
+        if (is_callable($method)) {
+            call_user_func($method);
+        }
+        
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }
     
     public function name($name)
     {
         $this->name[] = $name;
-    }
-    
-    private function add($route, $method))
-    {
-        $this->route[] = $route;
-        
-        $this->method[] = $method;  
     }
     
     private function getUrl()
