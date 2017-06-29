@@ -17,9 +17,7 @@ class Router
         {
             if (strpos($this->url(), $value) === false) continue;
             
-            is_callback($this->method[$key])
-                ? call_user_func($this->method[$key])
-                : $this->call($this->method[$key]);
+            $this->call($this->method[$key]);
         }   
     }
     
@@ -81,8 +79,10 @@ class Router
         $this->route[$name] = $value;
     }
     
-    private function call(string $method)
+    private function call($method)
     {
+        if (is_callable($method)) return call_user_func($method);
+        
         $parts = explode(':', $method);
             
         $controller = new \App\HTTP\Controllers\$parts[0];
