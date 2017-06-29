@@ -33,7 +33,7 @@ class Router
         //TODO:
     }
     
-    public function forUrl(string $name)
+    public function forUrl(string $name) : string
     {
         foreach ($this->route as $key => $value)
         {
