@@ -11,9 +11,11 @@ class Router
     
     private $method = [];
     
+    private $name = [];
+    
     public function run()   
     {
-        foreach (array_values($this->route) as $key => $value)
+        foreach ($this->route as $key => $value)
         {
             if (strpos($this->url(), $value) === false) continue;
             
@@ -33,7 +35,7 @@ class Router
     
     public function forUrl(string $name) : string
     {
-        foreach ($this->route as $key => $value)
+        foreach ($this->name as $key => $value)
         {
             if ($key === $name) return $value;
         }
@@ -70,13 +72,9 @@ class Router
     
     public function name(string $name) : void
     {
-        $key = count($this->route) - 1;
+        $value = $this->route[count($this->route) - 1];
         
-        $value = $this->route[$key];
-        
-        unset($this->route[$key]);
-        
-        $this->route[$name] = $value;
+        $this->name[$name] = $value;
     }
     
     private function call($method)
