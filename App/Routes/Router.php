@@ -39,6 +39,8 @@ class Router
         {
             if ($key === $name) return $value;
         }
+        
+        throw new Exception('{$name} not found.', 404);
     }
     
     public function get($route, $method)
