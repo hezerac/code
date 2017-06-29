@@ -15,7 +15,7 @@ class Router
     {   
         foreach ($this->route as $key => $value)
         {
-            if (strpos($this->getUrl(), $value) === false) continue;
+            if (strpos($this->url(), $value) === false) continue;
             
             is_callback($this->method[$key])
                 ? call_user_func($this->method[$key])
@@ -39,28 +39,35 @@ class Router
         {
             if ($key === $name) return $value;
         }
-        
         throw new Exception('{$name} not found.', 404);
     }
     
     public function get($route, $method)
     {       
-        $this->add($route, $method);
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }   
     
     public function post($route, $method)  
     {       
-        $this->add($route, $method);
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }   
     
     public function put($route, $method)  
     {       
-        $this->add($route, $method);
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }   
     
     public function delete($route, $method)  
     {       
-        $this->add($route, $method);
+        $this->route[] = $route;
+        
+        $this->method[] = $method;
     }
     
     public function name(string $name) : void
@@ -94,7 +101,7 @@ class Router
         $this->method[] = $method;
     }
     
-    private function getUrl() : string
+    private function url() : string
     {
         return '/' . ($_GET['url'] ?? '');
     }
