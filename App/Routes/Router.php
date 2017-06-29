@@ -33,9 +33,12 @@ class Router
         //TODO:
     }
     
-    public function forUrl()
+    public function forUrl(string $name)
     {
-        //TODO:
+        foreach ($this->route as $key => $value)
+        {
+            if ($key === $name) return $value;
+        }
     }
     
     public function get($route, $method)
