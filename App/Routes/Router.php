@@ -7,8 +7,6 @@ namespace App\Routes;
     
 class Router
 {
-    private $name = [];
-    
     private $route = [];
     
     private $method = [];
@@ -60,9 +58,15 @@ class Router
         $this->add($route, $method);
     }
     
-    public function name(string $name)
+    public function name(string $name) : void
     {
-        //$this->name[] = $name;
+        $key = count($this->route) - 1;
+        
+        $value = $this->route[$key];
+        
+        unset($this->route[$key]);
+        
+        $this->route[$name] = $value;
     }
     
     private function call(string $method)
