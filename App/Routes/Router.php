@@ -12,8 +12,8 @@ class Router
     private $method = [];
     
     public function run()   
-    {   
-        foreach ($this->route as $key => $value)
+    {
+        foreach (array_values($this->route) as $key => $value)
         {
             if (strpos($this->url(), $value) === false) continue;
             
