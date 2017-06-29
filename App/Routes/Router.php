@@ -94,13 +94,6 @@ class Router
         $controller->$method(...$args);
     }
     
-    private function add(string $route, $method) : void
-    {
-        $this->route[] = $route;
-        
-        $this->method[] = $method;
-    }
-    
     private function url() : string
     {
         return '/' . ($_GET['url'] ?? '');
