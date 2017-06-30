@@ -30,7 +30,7 @@ class Router
     
     public function redirect(string $url) : void
     {
-        header('Location: {$url}'); exit;
+        header("Location: {$url}"); exit;
     }
     
     public function forUrl(string $name, array $params = []) : string
@@ -39,7 +39,7 @@ class Router
         {
             if ($key === $name) return $value;
         }
-        throw new Exception(__METHOD__ . '::{$name} not found.', 404);
+        throw new Exception(__METHOD__ . "::{$name} not found.", 404);
     }
     
     public function get($route, $method) : void
