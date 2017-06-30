@@ -28,12 +28,12 @@ class Router
         return $_SERVER['REQUEST_METHOD'] === 'GET' ? $_GET : $_POST;
     }
     
-    public function redirect()
+    public function redirect(string $url)
     {
-        //TODO:
+        header('Location: ' . $url, 303); exit;
     }
     
-    public function forUrl(string $name) : string
+    public function forUrl(string $name, array $params = []) : string
     {
         foreach ($this->name as $key => $value)
         {
