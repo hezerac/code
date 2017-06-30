@@ -42,28 +42,28 @@ class Router
         throw new Exception(__METHOD__ . '::{$name} not found.', 404);
     }
     
-    public function get($route, $method)
+    public function get($route, $method) : void
     {       
         $this->route[] = $route;
         
         $this->method[] = $method;
     }   
     
-    public function post($route, $method)  
+    public function post($route, $method) : void
     {       
         $this->route[] = $route;
         
         $this->method[] = $method;
     }   
     
-    public function put($route, $method)  
+    public function put($route, $method) : void
     {       
         $this->route[] = $route;
         
         $this->method[] = $method;
     }   
     
-    public function delete($route, $method)  
+    public function delete($route, $method) : void
     {       
         $this->route[] = $route;
         
