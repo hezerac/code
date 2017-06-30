@@ -94,7 +94,7 @@ class Router
     
     private function url() : string
     {
-        return '/' . ($_GET['url'] ?? '');
+        return ('/' . ($_GET['url'] ?? ''));
     }
 }
 
