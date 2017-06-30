@@ -19,11 +19,11 @@ class CrudController
             
             $data = (new CrudModel)->getAll($user);
             
-            (new Response)->json($data, 200);
+            (new Response)->setCode(200)->json($data);
             
         } catch (Exception $e) {
             
-            (new Response)->json($e->getMessage(), $e->getCode());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
     
@@ -35,11 +35,11 @@ class CrudController
             
             $data = (new CrudModel)->getOne($user, $id);
             
-            (new Response)->json($data, 200);
+            (new Response)->setCode(200)->json($data);
             
         } catch (Exception $e) {
             
-            (new Response)->json($e->getMessage(), $e->getCode());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
     
@@ -53,11 +53,11 @@ class CrudController
             
             $data = (new CrudModel)->create($user, $request);
             
-            (new Response)->json($data, 201);
+            (new Response)->setCode(201)->json($data);
             
         } catch (Exception $e) {
             
-            (new Response)->json($e->getMessage(), $e->getCode());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
     
@@ -71,11 +71,11 @@ class CrudController
             
             $data = (new CrudModel)->update($user, $request, $id);
             
-            (new Response)->json($data, 201);
+            (new Response)->setCode(201)->json($data);
             
         } catch (Exception $e) {
             
-            (new Response)->json($e->getMessage(), $e->getCode());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
     
@@ -87,11 +87,11 @@ class CrudController
             
             $data = (new CrudModel)->delete($user, $id);
             
-            (new Response)->json($data, 204);
+            (new Response)->setCode(204)->json($data);
             
         } catch (Exception $e) {
             
-            (new Response)->json($e->getMessage(), $e->getCode());
+            (new Response)->setCode($e->getCode())->json($e->getMessage());
         }
     }
 }
