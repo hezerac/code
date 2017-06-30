@@ -30,7 +30,7 @@ class Router
     
     public function redirect(string $url)
     {
-        header('Location: ' . $url, 303); exit;
+        header('Location: $url'); exit;
     }
     
     public function forUrl(string $name, array $params = []) : string
