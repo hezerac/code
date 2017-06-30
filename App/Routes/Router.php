@@ -28,7 +28,7 @@ class Router
         return $_SERVER['REQUEST_METHOD'] === 'GET' ? $_GET : $_POST;
     }
     
-    public function redirect(string $url)
+    public function redirect(string $url) : void
     {
         header('Location: $url'); exit;
     }
