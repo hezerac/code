@@ -13,7 +13,7 @@ class CrudModel extends Model
         
         $params = [ 'user' => $user ];
         
-        $parser->parse(
+        return $parser->parse(
             parent::call($sql, $params)
         );
     }
