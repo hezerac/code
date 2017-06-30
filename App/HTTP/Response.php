@@ -13,7 +13,7 @@ class Response
     {
         header('Content-Type: application/json');
         
-        return json_encode([
+        echo json_encode([
             'status' => $this->code, 
             'response' => $data
         ]);
