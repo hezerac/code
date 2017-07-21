@@ -1,8 +1,8 @@
 
 
-        <footer><?= $footer ?></footer>
+        <footer><?= $template['footer']; ?></footer>
     <script src='/Resources/Main.js></script>
-    <?= $footerScripts ?>
+    <?= $template['footerScripts']; ?>
 </body>
 
 
