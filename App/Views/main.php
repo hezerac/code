@@ -2,6 +2,6 @@
                 
         </main>
 
-        <? $leftSideBar ?? '<!-- No Left Sidebar -->' ?>
+        <? $template['leftSideBar'] ?? '<!-- No Left Sidebar -->'; ?>
 
-        <? $rightSideBar ?? '<!-- No Right Sidebar -->' ?>
+        <? $template['rightSideBar'] ?? '<!-- No Right Sidebar -->'; ?>
