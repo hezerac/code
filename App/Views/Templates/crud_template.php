@@ -5,9 +5,9 @@
  */
 
 
-$title = 'Crud Example';
+$template['title'] = 'Crud Example';
     
-$leftSidebar = <<<HTML
+$template['leftSidebar'] = <<<HTML
     <aside>
         <nav>
             <a>a link emerges</a>
@@ -15,4 +15,4 @@ $leftSidebar = <<<HTML
     </aside>
 HTML;
     
-$footerScripts = '<script src="/public/js/crud.js"></script>';
+$template['footerScripts'] = '<script src="/public/js/crud.js"></script>';
