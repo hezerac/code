@@ -17,7 +17,7 @@ class CrudController
             
             $user = (new Cookie)->getCookie(); //TODO: make authorization class
             
-            $data = (new CrudModel)->getAll($user, new CrudParser);
+            $data = (new CrudModel)->getAll($user);
             
             (new Response)->setCode(200)->json($data);
             
