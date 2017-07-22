@@ -7,8 +7,12 @@ namespace App\Models;
     
 class CrudModel extends Model
 {
-    public function getAll($user, CrudParser $parser = null)  
+    public function getAll($user, $parser = null)  
     {   
+        if (!isset($parser)) {
+            $parser = new CrudGetParser;
+        }
+        
         $sql = 'stored_procedure_name_get_all';
         
         $params = [ 'user' => $user ];
