@@ -9,9 +9,7 @@ class CrudModel extends Model
 {
     public function getAll($user, $parser = null)  
     {   
-        if ($parser === null) {
-            $parser = new CrudGetParser;
-        }
+        if ($parser === null) $parser = new CrudGetParser;
         
         $sql = 'stored_procedure_name_get_all';
         
