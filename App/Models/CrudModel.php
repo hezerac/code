@@ -9,7 +9,7 @@ class CrudModel extends Model
 {
     public function getAll($user, $parser = null)  
     {   
-        if (!isset($parser)) {
+        if ($parser === null) {
             $parser = new CrudGetParser;
         }
         
@@ -38,11 +38,11 @@ class CrudModel extends Model
     
     public function create($user, array $request) 
     {
-        $sql = 'stored_procedure_name_create';
-        
         if (!isset($request['required_value']) || empty($request['required_value'])) {
             throw new Exception(__METHOD__ . '::Missing require value.', 400);
         }
+        
+        $sql = 'stored_procedure_name_create';
         
         $params = [
             'user' => $user,
@@ -57,11 +57,11 @@ class CrudModel extends Model
     
     public function update($user, array $request, $id)  
     {
-        $sql = 'stored_procedure_name_update';
-        
         if (!isset($request['required_value']) || empty($request['required_value'])) {
             throw new Exception(__METHOD__ . '::Missing require value.', 400);
         }
+        
+        $sql = 'stored_procedure_name_update';
         
         $params = [
             'user' => $user,
