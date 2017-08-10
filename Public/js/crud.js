@@ -1,33 +1,19 @@
-/*
-const dashboard = Object.create(main);
 
-crud.buildEvents = () =>
-{
-    const event = this.createEventListeners();
+const Dashboard = (props) => {
     
-    event.create('click', 'crud.buildResults');
+    const component = Core.createComponents();
     
-    event.render();
-};
-*/
-
-const component = (data) => {
+    component.create(props.title, 'h1');
     
-    const fragment = this.createFragments();
+    component.create(props.description, 'article', {'id': 'parent'});
     
-    fragment.create(data.title, 'h1');
+    component.append('submit', 'button', {'onclick': 'action()'}, 'parent');
     
-    fragment.create(data.description, 'p');
-    
-    fragment.create('submit', 'button', 'action()');
-    
-    //figure out how to nest fragments
-    
-    Object.keys(data).forEach(key => {
-        fragment.create(data[key].value, 'div', { 'class': 'examples' });
+    Object.keys(props).forEach(key => {
+        component.create(props[key].value, 'div', {'class': 'examples'});
     });
     
-    fragment.render();
+    component.render();
 };
     
 dashboard.render = () =>
