@@ -1,4 +1,5 @@
-const crud = Object.create(main);
+/*
+const dashboard = Object.create(main);
 
 crud.buildEvents = () =>
 {
@@ -8,14 +9,19 @@ crud.buildEvents = () =>
     
     event.render();
 };
+*/
 
-crud.buildContent = (data) => 
-{
+const component = (data) => {
+    
     const fragment = this.createFragments();
     
     fragment.create(data.title, 'h1');
     
     fragment.create(data.description, 'p');
+    
+    fragment.create('submit', 'button', 'action()');
+    
+    //figure out how to nest fragments
     
     Object.keys(data).forEach(key => {
         fragment.create(data[key].value, 'div', { 'class': 'examples' });
@@ -24,9 +30,9 @@ crud.buildContent = (data) =>
     fragment.render();
 };
     
-crud.buildResults = () =>
+dashboard.render = () =>
 {
     fetch(url)
         .then(response => response.json())
-        .then(data => { this.buildContent(data) });
+        .then(data => component(data));
 };
