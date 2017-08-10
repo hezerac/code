@@ -1,16 +1,16 @@
 
-const Dashboard = (props) => {
+const Dashboard = data => {
     
     const component = Core.createComponent();
     
-    component.addElement(props.title, 'h1');
+    component.addElement(data.title, 'h1');
     
-    component.addElement(props.description, 'article', {'id': 'parent'});
+    component.addElement(data.description, 'article', {'id': 'parent'});
     
     component.appendElement('submit', 'button', {'onclick': 'action()'}, 'parent');
     
-    Object.keys(props).forEach(key => {
-        component.appendElement(props[key].value, 'div', {'class': 'examples'});
+    Object.keys(data).forEach(key => {
+        component.appendElement(data[key].value, 'div', {'class': 'examples'});
     });
     
     component.render();
