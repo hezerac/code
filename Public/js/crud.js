@@ -1,38 +1,39 @@
 
 const Dashboard = data => {
-    
-    let state = {};
-    
-    return () => {
         
-        const component = Core.createComponent();
+    const component = Core.createComponent();
     
-        component.addElement('article', {
+    component.addElement('article')
+        .withAttributes({
             'id': 'parent',
-            'class': 'articles'
+            'class': 'articles',
+            'data-type': 'container'
         });
         
-        component.addElement('h1', {}, data.title)
-            .appendTo('parent');
+    component.addElement('h1')
+        .withAttributes({'id': 'title'})
+        .withContent(data.title)
+        .appendTo('parent');
     
-        component.addElement('button', {'onclick': 'action()'}, 'Submit')
+    Object.keys(data).forEach(key => {
+        component.addElement('p')
+            .withAttributes({'class': 'examples'})
+            .withContent(data.value[key])
             .appendTo('parent');
+    });
+    
+    component.addElement('button')
+        .withAttributes({'onclick': 'action()'})
+        .withContent('Submit')
+        .appendTo('parent');
         
-        component.addElement('p', {}, data.text)
-            .appendTo('parent');
-    
-        Object.keys(data).forEach(key => {
-            component.addElement('p', {'class': 'examples'}, data.value[key])
-                .appendTo('parent');
-        });
-    
-        component.render();
-    }
+    component.render();
 };
     
+
 dashboard.render = () =>
 {
     fetch(url)
         .then(response => response.json())
-        .then(data => component(data));
+        .then(data => Dashboard(data));
 };
