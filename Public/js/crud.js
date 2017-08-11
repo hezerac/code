@@ -7,14 +7,16 @@ const Dashboard = data => {
         
         const component = Core.createComponent();
     
-        component.addElement(data.title, 'h1');
+        component.addElement('article', {'id': 'parent'});
+        
+        component.addElement('h1', {}, data.title).appendTo('parent');
     
-        component.addElement(data.description, 'article', {'id': 'parent'});
-    
-        component.appendElement('submit', 'button', {'onclick': 'action()'}, 'parent');
+        component.addElement('button', {'onclick': 'action()'}, 'Submit').appendTo('parent');
+        
+        component.addElement('p', {}, data.text).appendTo('parent');
     
         Object.keys(data).forEach(key => {
-            component.appendElement(data[key].value, 'div', {'class': 'examples'});
+            component.addElement('p', {'class': 'examples'}, data.value[key]).appendTo('parent');
         });
     
         component.render();
