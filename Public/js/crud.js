@@ -7,7 +7,10 @@ const Dashboard = data => {
         
         const component = Core.createComponent();
     
-        component.addElement('article', {'id': 'parent'});
+        component.addElement('article', {
+            'id': 'parent',
+            'class': 'articles'
+        });
         
         component.addElement('h1', {}, data.title)
             .appendTo('parent');
