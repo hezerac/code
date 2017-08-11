@@ -1,19 +1,24 @@
 
 const Dashboard = data => {
     
-    const component = Core.createComponent();
+    let state = {};
     
-    component.addElement(data.title, 'h1');
+    return () => {
+        
+        const component = Core.createComponent();
     
-    component.addElement(data.description, 'article', {'id': 'parent'});
+        component.addElement(data.title, 'h1');
     
-    component.appendElement('submit', 'button', {'onclick': 'action()'}, 'parent');
+        component.addElement(data.description, 'article', {'id': 'parent'});
     
-    Object.keys(data).forEach(key => {
-        component.appendElement(data[key].value, 'div', {'class': 'examples'});
-    });
+        component.appendElement('submit', 'button', {'onclick': 'action()'}, 'parent');
     
-    component.render();
+        Object.keys(data).forEach(key => {
+            component.appendElement(data[key].value, 'div', {'class': 'examples'});
+        });
+    
+        component.render();
+    }
 };
     
 dashboard.render = () =>
