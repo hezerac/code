@@ -27,9 +27,14 @@ const main = {
                 if (Object.keys(attributes).length) setAttributes(e, attributes);
                 fragment.appendChild(e).appendChild(c);
             },
-            render(element = 'main') {
+            render(component, api) {
                 if (!fragment.hasChildNodes()) return;
-                document.querySelector(element).appendChild(fragment);
+                
+                fetch(api)
+                  .then(response => response.json())
+                  .then(data => component(data));
+                
+                document.querySelector('root').appendChild(fragment);
             }
         };
     }
