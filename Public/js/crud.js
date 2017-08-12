@@ -32,11 +32,3 @@ const Dashboard = data => {
         '/api/v1/dashboard'
     );
 };
-    
-
-dashboard.render = () =>
-{
-    fetch(url)
-        .then(response => response.json())
-        .then(data => Dashboard(data));
-};
