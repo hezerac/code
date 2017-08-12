@@ -1,6 +1,6 @@
 
 const Dashboard = data => {
-        
+    
     const component = Core.createComponent();
     
     component.addElement('article')
@@ -23,7 +23,7 @@ const Dashboard = data => {
     });
     
     component.addElement('button')
-        .withAttributes({'onclick': 'action()'})
+        .withAttributes({'onclick': 'Dashboard.action()'})
         .withContent('Submit')
         .appendTo('parent');
         
@@ -31,4 +31,10 @@ const Dashboard = data => {
         Dashboard,
         '/api/v1/dashboard'
     );
+    
+    return {
+        action() {
+            alert('this is a test.');
+        }
+    };
 };
