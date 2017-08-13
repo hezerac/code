@@ -23,7 +23,7 @@ const Dashboard = data => {
     });
     
     component.addElement('button')
-        .withAttributes({'onclick': 'Dashboard.action()'})
+        .withAttributes({'onclick': 'methods.action()'})
         .withContent('Submit')
         .appendTo('parent');
         
