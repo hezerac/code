@@ -1,40 +1,45 @@
 
-const Dashboard = data => {
+import Component from 'Component';
+
+class Dashboard extends Component
+{
+    buildComponent() {
+        fetch('/api/v1/dashboard'
+            .then(response => response.json())
+            .then(data => this.templateComponent(data));
+    }
     
-    const component = Core.createComponent();
+    templateComponent(data) {
+        const template = Core.createTemplate();
     
-    component.addElement('article')
-        .withAttributes({
-            'id': 'parent',
-            'class': 'articles',
-            'data-type': 'container'
-        });
+        template.addElement('article')
+            .withAttributes({
+                'id': 'parent',
+                'class': 'articles',
+                'data-type': 'container'
+            });
         
-    component.addElement('h1')
-        .withAttributes({'id': 'title'})
-        .withContent(data.title)
-        .appendTo('parent');
-    
-    Object.keys(data).forEach(key => {
-        component.addElement('p')
-            .withAttributes({'class': 'examples'})
-            .withContent(data.value[key])
+        template.addElement('h1')
+            .withAttributes({'id': 'title'})
+            .withContent(data.title)
             .appendTo('parent');
-    });
     
-    component.addElement('button')
-        .withAttributes({'onclick': 'methods.action()'})
-        .withContent('Submit')
-        .appendTo('parent');
+        Object.keys(data).forEach(key => {
+            template.addElement('p')
+                .withAttributes({'class': 'examples'})
+                .withContent(data.value[key])
+                .appendTo('parent');
+        });
+    
+        template.addElement('button')
+            .withAttributes({'onclick': 'methods.action()'})
+            .withContent('Submit')
+            .appendTo('parent');
         
-    component.render(
-        Dashboard,
-        '/api/v1/dashboard'
-    );
+        template.render()
+    }
     
-    return {
-        action() {
-            alert('this is a test.');
-        }
-    };
-};
+    action() {
+        alert('this is a test.');
+    }
+}
