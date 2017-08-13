@@ -31,8 +31,10 @@ const main = {
                 if (!fragment.hasChildNodes()) return;
                 
                 fetch(api)
-                  .then(response => response.json())
-                  .then(data => component(data));
+                    .then(response => response.json())
+                    .then(data => {
+                        const methods = component(data);
+                    });
                 
                 document.querySelector('root').appendChild(fragment);
             }
