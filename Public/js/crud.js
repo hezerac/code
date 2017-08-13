@@ -27,10 +27,7 @@ const Dashboard = data => {
         .withContent('Submit')
         .appendTo('parent');
         
-    component.render(
-        Dashboard,
-        '/api/v1/dashboard'
-    );
+    component.render(Dashboard);
     
     return {
         action() {
