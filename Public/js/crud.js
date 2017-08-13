@@ -1,7 +1,7 @@
 
-import Component from 'Component';
+import Component from '/Component';
 
-class Dashboard extends Component
+export default class Dashboard extends Component
 {
     buildComponent() {
         fetch('/api/v1/dashboard'
