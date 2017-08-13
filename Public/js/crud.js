@@ -1,5 +1,5 @@
 
-import Component from '/Component';
+import Component from 'Component';
 
 export default class Dashboard extends Component
 {
