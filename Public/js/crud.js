@@ -3,6 +3,10 @@ import Component from 'Component';
 
 export default class Dashboard extends Component
 {
+    constructor() {
+        super();
+    }
+    
     buildComponent() {
         fetch('/api/v1/dashboard'
             .then(response => response.json())
