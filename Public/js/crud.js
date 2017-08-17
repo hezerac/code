@@ -18,6 +18,7 @@ export default class Dashboard extends Component
     /*
     In Core when add element is run if exists remove from dom the container element id
     Then append the submissions to an element id then thats what goes to fragment.
+    Actually it should be removed from dom in render method just before fragment append.
     */
         template.addElement('article')
             .withAttributes({
