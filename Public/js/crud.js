@@ -7,10 +7,10 @@ export default class Dashboard extends Component
         super();
     }
     
-    buildComponent() {
-        fetch('/api/v1/dashboard'
-            .then(response => response.json())
-            .then(data => this.templateComponent(data));
+    async buildComponent() {
+        const response = await fetch('/api/v1/dashboard');
+        const data = await response.json();
+        return this.templateComponent(data);
     }
     
     templateComponent(data) {
