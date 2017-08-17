@@ -15,7 +15,10 @@ export default class Dashboard extends Component
     
     componentTemplate(data) {
         const template = Core.createTemplate();
-    
+    /*
+    In Core when add element is run if exists remove from dom the container element id
+    Then append the submissions to an element id then thats what goes to fragment.
+    */
         template.addElement('article')
             .withAttributes({
                 'id': 'parent',
