@@ -10,10 +10,10 @@ export default class Dashboard extends Component
     async buildComponent() {
         const response = await fetch('/api/v1/dashboard');
         const data = await response.json();
-        return this.templateComponent(data);
+        return this.componentTemplate(data);
     }
     
-    templateComponent(data) {
+    componentTemplate(data) {
         const template = Core.createTemplate();
     
         template.addElement('article')
@@ -32,7 +32,7 @@ export default class Dashboard extends Component
             template.addElement('p')
                 .withAttributes({'class': 'examples'})
                 .withContent(data.value[key])
-                .appendTo('parent');
+                .appendTo('parent')
         );
     
         template.addElement('button')
