@@ -28,12 +28,12 @@ export default class Dashboard extends Component
             .withContent(data.title)
             .appendTo('parent');
     
-        Object.keys(data).forEach(key => {
+        Object.keys(data).forEach(key =>
             template.addElement('p')
                 .withAttributes({'class': 'examples'})
                 .withContent(data.value[key])
                 .appendTo('parent');
-        });
+        );
     
         template.addElement('button')
             .withAttributes({'onclick': 'methods.action()'})
