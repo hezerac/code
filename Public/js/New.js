@@ -27,7 +27,9 @@ const childComponent = props =>
         };
         //Core renders components internally
         render() {
-            return {'h1': {'class': props}};
+            return [
+                {'h1': {'class': props}}
+            ];
         }
     };
 };
