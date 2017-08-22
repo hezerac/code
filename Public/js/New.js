@@ -3,7 +3,7 @@ const parentComponent = () =>
 {
     return {
         render() {
-            childProps = 'lead';
+            const childProps = 'lead';
             return Component.create(
                 {'header': {'class': 'panel-header'}},
                 childComponent(childProps);
