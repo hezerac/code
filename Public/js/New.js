@@ -1,40 +1,29 @@
 
-const parentComponent = () =>
-{
-    return {
-        render() {
-            const childProps = 'lead';
-            return Component.create(
-                {'header': {'class': 'panel-header'}},
-                childComponent(childProps);
-            );
-        }
-    };
+const parentComponent = () => {
+    const childProps = 'lead';
+    return [
+        {'header': {'class': 'panel-header'}},
+        ...childComponent(childProps);
+    ];
 };
 
-const childComponent = props => 
-{
-    return {
-        Component.state = {
-            'clicks': 0
-        };
+const childComponent = props => {
+    const state = {
+        'clicks': 0
+    };
     
-        handleSubmit() {
-            const currentState = Component.state.clicks;
-            Component.setState({
-                'clicks': currentState + 1
-            });
-        };
-        //Core renders components internally
-        render() {
-            return [
-                {'h1': {'class': props}}
-            ];
-        }
+    const handleSubmit = () => {
+        const currentState = Component.state.clicks;
+        Core.setState({
+            'clicks': currentState + 1
+        });
     };
+    return [
+        {'h1': {'class': props}}
+    ];
 };
 
-Component.render(
+Core.render(
     parentComponent(),
     document.getElementById('root')
 );
