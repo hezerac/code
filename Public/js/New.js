@@ -11,7 +11,6 @@ const childComponent = props => {
     const state = {
         'clicks': 0
     };
-    
     const handleSubmit = () => {
         const currentState = Component.state.clicks;
         Core.setState({
