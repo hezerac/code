@@ -1,6 +1,6 @@
 <?php
 /**
- * Api Controller
+ * Some Api Controller
  *
  */
 namespace App\Controllers;
