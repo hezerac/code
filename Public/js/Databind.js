@@ -1,18 +1,18 @@
-var $scope = {};
-(function () {
-    var bindClasses = ["name", "age"];
-    var attachEvent = function (classNames) {
-        classNames.forEach(function (className) {
-            var elements = document.getElementsByClassName(className);
-            for (var index in elements) {
-                elements[index].onkeyup = function () {
-                    for (var index in elements) {
+const scope = {};
+(() => {
+    const bindClasses = ["name", "age"];
+    const attachEvent = classNames => {
+        classNames.forEach(className => {
+            let elements = document.getElementsByClassName(className);
+            Object.keys(elements).forEach(key => {
+                elements[key].onkeyup = () => {
+                    for (let index in elements) {
                         elements[index].value = this.value;
                     }
-                }
-            }
+                };
+            });
             Object.defineProperty($scope, className, {
-                set: function (newValue) {
+                set(newValue) {
                     for (var index in elements) {
                         elements[index].value = newValue;
                     }
