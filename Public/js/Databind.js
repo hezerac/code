@@ -1,10 +1,10 @@
 const scope = {};
 (() => {
-    const bindClasses = ["name", "age"];
+    const bindClasses = ['name', 'age'];
     const attachEvent = classNames => {
         classNames.forEach(className => {
             let elements = document.getElementsByClassName(className);
-            createAciom(elements);
+            createAction(elements);
             createProps(elements);
         });
     };
